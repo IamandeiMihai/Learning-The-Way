@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class States : MonoBehaviour
 {
+    public float reward;
+
     public GameObject northNeighbour;
     public GameObject eastNeighbour;
     public GameObject southNeighbour;
