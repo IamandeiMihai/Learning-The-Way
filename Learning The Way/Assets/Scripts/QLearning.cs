@@ -13,7 +13,7 @@ public class QLearning : MonoBehaviour
     public int maxStepsPerEpisode = 30;
 
     public float learningRate = 0.7f;
-    public float discountRate = 0.99f;
+    public float attenuationFactor = 0.99f;
 
 
     float explorationRate = 1;
@@ -155,7 +155,7 @@ public class QLearning : MonoBehaviour
                 done = states[newState].transform == end;
 
                 // Learning
-                qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + discountRate * GetMaxValue(newState));
+                qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
 
                 currentState = newState;
                 rewardCurrentEpisode += reward;
