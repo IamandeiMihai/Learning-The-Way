@@ -7,96 +7,68 @@ public class AICharacterControl : MonoBehaviour
     public void Initialize(GameObject character)
     {
         m_animator = character.GetComponent<Animator>();
-        m_rigidBody = character.GetComponent<Rigidbody>();
     }
-
-    private enum ControlMode
-    {
-        /// <summary>
-        /// Up moves the character forward, left and right turn the character gradually and down moves the character backwards
-        /// </summary>
-        Tank,
-        /// <summary>
-        /// Character freely moves in the chosen direction from the perspective of the camera
-        /// </summary>
-        Direct
-    }
-
-    [SerializeField] private float m_moveSpeed = 2;
-    [SerializeField] private float m_turnSpeed = 200;
-    [SerializeField] private float m_jumpForce = 4;
-
-    [SerializeField] private Animator m_animator;
-    [SerializeField] private Rigidbody m_rigidBody;
-
-    [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
     private float m_currentV = 0;
-    private float m_currentH = 0;
-
     private readonly float m_interpolation = 10;
-    private readonly float m_walkScale = 0.33f;
-    private readonly float m_backwardsWalkScale = 0.16f;
-    private readonly float m_backwardRunScale = 0.66f;
-
-    private bool m_wasGrounded;
-    private Vector3 m_currentDirection = Vector3.zero;
-
-    private float m_jumpTimeStamp = 0;
-    private float m_minJumpInterval = 0.25f;
-
-    private bool m_isGrounded;
-
-    private List<Collider> m_collisions = new List<Collider>();
+    [SerializeField] private Animator m_animator;
 
 
+    public Transform target;
+    public bool moveDone;
+    public bool rotationDone;
+
+    public float moveSpeed;
+    public float turnSpeed;
+    [Range(1.0f, 50.0f)]
+    public float timeSpeed;
 
     private void Awake()
     {
-        m_isGrounded = true;
-        m_wasGrounded = true;
-        if (!m_animator) { gameObject.GetComponent<Animator>(); }
-        if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
-        
+        if (!m_animator) { gameObject.GetComponent<Animator>(); }   
     }
 
     // Update is called once per frame
     void Update()
     {
-        TankUpdate();
+        Time.timeScale = timeSpeed;
+        MoveCharacter(target);
     }
 
     private void MoveCharacter(Transform target)
     {
-
-    }
-
-    private void TankUpdate()
-    {
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
-
-        bool walk = Input.GetKey(KeyCode.LeftShift);
-
-        if (v < 0)
+        if (!moveDone)
         {
-            if (walk) { v *= m_backwardsWalkScale; }
-            else { v *= m_backwardRunScale; }
+            if (!rotationDone)
+            {
+                Vector3 direction = target.position - this.transform.position;
+                Quaternion toRotation = Quaternion.LookRotation(direction);
+                this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, toRotation, turnSpeed * Time.deltaTime);
+
+
+                if (Quaternion.Angle(toRotation, this.transform.rotation) < 0.5f)
+                {
+                    rotationDone = true;
+                }
+            }
+            else
+            {
+                this.transform.position = Vector3.MoveTowards(this.transform.position, target.position, moveSpeed * Time.deltaTime);
+            }
         }
-        else if (walk)
+
+        if (Vector3.Distance(target.position, this.transform.position) < 0.1f)
         {
-            v *= m_walkScale;
+            moveDone = true;
+            rotationDone = false;
+            m_animator.SetFloat("MoveSpeed", 0);
+        } else
+        {
+            float v = 0.5f;
+            m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
+            m_animator.SetFloat("MoveSpeed", m_currentV);
+
+            moveDone = false;
         }
-
-        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
-
-        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
-        transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
-
-        m_animator.SetFloat("MoveSpeed", m_currentV);
-
     }
-
-
 }
