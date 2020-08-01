@@ -47490,6 +47490,10 @@ PrefabInstance:
       propertyPath: end
       value: 
       objectReference: {fileID: 1705978895}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: learningRate
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1312939097, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

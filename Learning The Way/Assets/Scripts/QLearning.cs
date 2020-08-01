@@ -9,11 +9,17 @@ public class QLearning : MonoBehaviour
     private AICharacterControl control;
 
 
-    int numberOfEpisodes = 10000;
-    int maxStepsPerEpisode = 50;
+    public int numberOfEpisodes = 10000;
+    public int maxStepsPerEpisode = 30;
 
-    float learningRate = 0.1f;
-    float discountRate = 0.99f;
+    public float learningRate = 0.7f;
+    public float discountRate = 0.99f;
+
+
+    float explorationRate = 1;
+    float maxExplorationRate = 1;
+    float minExplorationRate = 0.01f;
+    public float explorationDecayRate = 0.01f;
 
     [SerializeField] List<float> rewardsAllEpisodes;
 
@@ -47,6 +53,20 @@ public class QLearning : MonoBehaviour
         StartCoroutine(qLearning());
     }
 
+    Action GetRandomAction(int currentState)
+    {
+        GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
+        List<int> nonNull = new List<int>();
+        for (int i = 0; i < 4; ++i)
+        {
+            if (neighbours[i] != null)
+            {
+                nonNull.Add(i);
+            }
+        }
+        return (Action)nonNull[UnityEngine.Random.Range(0, nonNull.Count)];
+    }
+
     Action GetBestAction(int currentState)
     {
         GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
@@ -67,7 +87,7 @@ public class QLearning : MonoBehaviour
                 {
                     if (qTable[currentState][i] == bestValue)
                     {
-                        if (UnityEngine.Random.Range(0, 1) == 1)
+                        if (UnityEngine.Random.Range(0, 2) == 1)
                         {
                             bestValue = qTable[currentState][i];
                             bestAction = (Action)i;
@@ -101,7 +121,7 @@ public class QLearning : MonoBehaviour
     
     IEnumerator qLearning()
     {
-        for (int i = 0; i < numberOfEpisodes; ++i)
+        for (int episode = 0; episode < numberOfEpisodes; ++episode)
         {
             // State reset
             this.transform.position = start.position;
@@ -116,7 +136,16 @@ public class QLearning : MonoBehaviour
             {
 
                 // Action
-                Action action = GetBestAction(currentState);
+                float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
+                Action action;
+                if (explorationRateThreshold > explorationRate)
+                {
+                    action = GetBestAction(currentState);   
+                }
+                else
+                {
+                    action = GetRandomAction(currentState);
+                }
                 control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                 control.moveDone = false;
                 while (!control.moveDone) { yield return null; }
@@ -137,6 +166,8 @@ public class QLearning : MonoBehaviour
                 }
                 yield return null;
             }
+
+            explorationRate = minExplorationRate + (maxExplorationRate - minExplorationRate) * Mathf.Exp(-explorationDecayRate * episode);
 
             rewardsAllEpisodes.Add(rewardCurrentEpisode);
             yield return null;
