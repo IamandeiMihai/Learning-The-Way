@@ -80,20 +80,6 @@ public class QLearning : MonoBehaviour
         return bestAction;
     }
 
-    IEnumerator DoStep(Action action)
-    {
-        control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
-        control.moveDone = false;
-        while (!control.moveDone) { }
-
-        newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-        reward = states[newState].GetComponent<States>().reward;
-        done = states[newState].transform == end;
-
-        yield return null;
-
-    }
-
     float GetMaxValue(int state)
     {
         GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
@@ -122,13 +108,22 @@ public class QLearning : MonoBehaviour
             this.transform.rotation = startRotation;
             done = false;
             rewardCurrentEpisode = 0;
+            currentState = 0;
+            newState = 0;
 
             // Learning
             for (int step = 0; step < maxStepsPerEpisode; ++step)
             {
+
                 // Action
                 Action action = GetBestAction(currentState);
-                DoStep(action);
+                control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
+                control.moveDone = false;
+                while (!control.moveDone) { yield return null; }
+
+                newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                reward = states[newState].GetComponent<States>().reward;
+                done = states[newState].transform == end;
 
                 // Learning
                 qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + discountRate * GetMaxValue(newState));

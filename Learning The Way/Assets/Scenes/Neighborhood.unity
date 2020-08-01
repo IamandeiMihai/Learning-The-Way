@@ -34884,7 +34884,7 @@ PrefabInstance:
     - target: {fileID: 6220702502986730458, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: reward
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6220702502998275341, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
@@ -47490,6 +47490,10 @@ PrefabInstance:
       propertyPath: end
       value: 
       objectReference: {fileID: 1705978895}
+    - target: {fileID: 1312939097, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7855755605619521293, guid: 6404b9ef317382e4aabaedc17f60a0ec,
         type: 3}
       propertyPath: m_Name
