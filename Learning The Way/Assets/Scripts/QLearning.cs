@@ -42,6 +42,8 @@ public class QLearning : MonoBehaviour
     public bool demo;
     public String fileName;
 
+    public bool visualLearning;
+
     void Start()
     {
         control = GetComponent<AICharacterControl>();
@@ -150,43 +152,78 @@ public class QLearning : MonoBehaviour
             currentState = 0;
             newState = 0;
 
-            // Learning
-            for (int step = 0; step < maxStepsPerEpisode; ++step)
+            if (visualLearning)
             {
 
-                // Action
-                float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
-                Action action;
-                if (explorationRateThreshold > explorationRate)
-                {
-                    Debug.Log("Best");
-                    action = GetBestAction(currentState);   
-                }
-                else
-                {
-                    Debug.Log("Random");
-                    action = GetRandomAction(currentState);
-                }
-                control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
-                control.moveDone = false;
-                while (!control.moveDone) { yield return null; }
-
-                newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                reward = states[newState].GetComponent<States>().reward;
-                done = states[newState].transform == end;
-
                 // Learning
-                qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
-
-                currentState = newState;
-                rewardCurrentEpisode += reward;
-
-                if (done == true)
+                for (int step = 0; step < maxStepsPerEpisode; ++step)
                 {
-                    Debug.Log("Park found");
-                    break;
+
+                    // Action
+                    float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
+                    Action action;
+                    if (explorationRateThreshold > explorationRate)
+                    {
+                        action = GetBestAction(currentState);
+                    }
+                    else
+                    {
+                        action = GetRandomAction(currentState);
+                    }
+                    control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
+                    control.moveDone = false;
+                    while (!control.moveDone) { yield return null; }
+
+                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                    reward = states[newState].GetComponent<States>().reward;
+                    done = states[newState].transform == end;
+
+                    // Learning
+                    qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+
+                    currentState = newState;
+                    rewardCurrentEpisode += reward;
+
+                    if (done == true)
+                    {
+                        break;
+                    }
+                    yield return null;
                 }
-                yield return null;
+            } else
+            {
+                // Learning
+                for (int step = 0; step < maxStepsPerEpisode; ++step)
+                {
+
+                    // Action
+                    float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
+                    Action action;
+                    if (explorationRateThreshold > explorationRate)
+                    {
+                        action = GetBestAction(currentState);
+                    }
+                    else
+                    {
+                        action = GetRandomAction(currentState);
+                    }
+
+                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                    reward = states[newState].GetComponent<States>().reward;
+                    done = states[newState].transform == end;
+
+                    // Learning
+                    qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+
+                    currentState = newState;
+                    rewardCurrentEpisode += reward;
+
+                    if (done == true)
+                    {
+                        break;
+                    }
+                    yield return null;
+                }
             }
 
             explorationRate = minExplorationRate + (maxExplorationRate - minExplorationRate) * Mathf.Exp(-explorationDecayRate * episode);
