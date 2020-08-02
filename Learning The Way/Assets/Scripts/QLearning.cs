@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class QLearning : MonoBehaviour
 {
+    public bool visualLearning;
+
     const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 
     private AICharacterControl control;
@@ -42,7 +44,7 @@ public class QLearning : MonoBehaviour
     public bool demo;
     public String fileName;
 
-    public bool visualLearning;
+ 
 
     void Start()
     {
@@ -222,7 +224,6 @@ public class QLearning : MonoBehaviour
                     {
                         break;
                     }
-                    yield return null;
                 }
             }
 
