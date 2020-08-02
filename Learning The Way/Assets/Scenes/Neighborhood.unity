@@ -34884,7 +34884,7 @@ PrefabInstance:
     - target: {fileID: 6220702502986730458, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: reward
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6220702502998275341, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
@@ -47493,6 +47493,27 @@ PrefabInstance:
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: learningRate
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: numberOfEpisodes
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: maxStepsPerEpisode
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: demo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: path
+      value: C:\Users\mihai.iamandei\AppData\LocalLow\DefaultCompany\Learning The
+        Way\QTABLE2dipoe0yt1.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: fileName
+      value: QTABLE2soqeqsxhc
       objectReference: {fileID: 0}
     - target: {fileID: 1312939097, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: m_LocalPosition.z
