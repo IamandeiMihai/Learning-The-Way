@@ -144,7 +144,7 @@ public class QLearning : MonoBehaviour
     
     IEnumerator qLearning()
     {
-        for (int episode = 0; episode < numberOfEpisodes; ++episode)
+        for (int episode = 1; episode <= numberOfEpisodes; ++episode)
         {
             if (visualLearning)
             {
@@ -181,13 +181,14 @@ public class QLearning : MonoBehaviour
                     {
                         action = GetRandomAction(currentState);
                     }
+                    Debug.Log(qTable[currentState][0] + " " + qTable[currentState][1] + " " + qTable[currentState][2] + " " + qTable[currentState][3]);
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
                     while (!control.moveDone) { yield return null; }
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     reward = states[newState].GetComponent<States>().reward;
-                    done = states[newState].transform == end;
+                    done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
                     // Learning
                     qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
@@ -219,9 +220,11 @@ public class QLearning : MonoBehaviour
                         action = GetRandomAction(currentState);
                     }
 
+                   
+
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     reward = states[newState].GetComponent<States>().reward;
-                    done = states[newState].transform == end;
+                    done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
                     // Learning
                     qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
@@ -239,6 +242,16 @@ public class QLearning : MonoBehaviour
             explorationRate = minExplorationRate + (maxExplorationRate - minExplorationRate) * Mathf.Exp(-explorationDecayRate * episode);
 
             rewardsAllEpisodes.Add(rewardCurrentEpisode);
+
+            if (episode % 1000 == 0)
+            {
+                float sum = 0;
+                for (int i = episode - 1000; i < episode; ++i)
+                {
+                    sum += rewardsAllEpisodes[i];
+                }
+                Debug.Log(episode + ": " + sum / 1000f);
+            } 
             yield return null;
         }
         yield return null;
