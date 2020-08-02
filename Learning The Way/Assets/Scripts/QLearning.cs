@@ -146,13 +146,22 @@ public class QLearning : MonoBehaviour
     {
         for (int episode = 0; episode < numberOfEpisodes; ++episode)
         {
-            // State reset
-            this.transform.position = start.position;
-            this.transform.rotation = startRotation;
-            done = false;
-            rewardCurrentEpisode = 0;
-            currentState = 0;
-            newState = 0;
+            if (visualLearning)
+            {
+                // State reset
+                this.transform.position = start.position;
+                this.transform.rotation = startRotation;
+                done = false;
+                rewardCurrentEpisode = 0;
+                currentState = 0;
+                newState = 0;
+            } else
+            {
+                done = false;
+                rewardCurrentEpisode = 0;
+                currentState = UnityEngine.Random.Range(0, states.Count);
+                newState = currentState;
+            }
 
             if (visualLearning)
             {
