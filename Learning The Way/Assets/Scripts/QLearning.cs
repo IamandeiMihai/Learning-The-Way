@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditorInternal;
 using UnityEngine;
 
 public class QLearning : MonoBehaviour
 {
-    private AICharacterControl control;
+    const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 
+    private AICharacterControl control;
 
     public int numberOfEpisodes = 10000;
     public int maxStepsPerEpisode = 30;
@@ -37,18 +39,35 @@ public class QLearning : MonoBehaviour
     private float reward;
     private bool done;
 
+    public bool demo;
+    public String fileName;
+
     void Start()
     {
         control = GetComponent<AICharacterControl>();
-        
-        qTable = new float[100][];
-        for (int i = 0; i < 100; ++i)
+
+        states.AddRange(GameObject.FindGameObjectsWithTag("state"));
+        currentState = 0;
+
+        qTable = new float[states.Count][];
+        for (int i = 0; i < states.Count; ++i)
         {
             qTable[i] = new float[4];
         }
 
-        states.AddRange(GameObject.FindGameObjectsWithTag("state"));
-        currentState = 0;
+        if (demo == true)
+        {
+            StreamReader reader = new StreamReader(Application.persistentDataPath + "\\" + fileName + ".txt");
+            
+            for (int i = 0; i < states.Count; i++)
+            {
+                string[] line = reader.ReadLine().Split();
+                qTable[i][0] = float.Parse(line[0]);
+                qTable[i][1] = float.Parse(line[1]);
+                qTable[i][2] = float.Parse(line[2]);
+                qTable[i][3] = float.Parse(line[3]);
+            }
+        }
 
         StartCoroutine(qLearning());
     }
@@ -140,10 +159,12 @@ public class QLearning : MonoBehaviour
                 Action action;
                 if (explorationRateThreshold > explorationRate)
                 {
+                    Debug.Log("Best");
                     action = GetBestAction(currentState);   
                 }
                 else
                 {
+                    Debug.Log("Random");
                     action = GetRandomAction(currentState);
                 }
                 control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
@@ -162,6 +183,7 @@ public class QLearning : MonoBehaviour
 
                 if (done == true)
                 {
+                    Debug.Log("Park found");
                     break;
                 }
                 yield return null;
@@ -174,6 +196,29 @@ public class QLearning : MonoBehaviour
         }
         yield return null;
     }
+
+    void OnApplicationQuit()
+    {
+        string path = Application.persistentDataPath;
+        string name = "/QTABLE";
+
+        for (int i = 0; i < 10; i++)
+        {
+            name += chars[UnityEngine.Random.Range(0, chars.Length)];
+        }
+        name += ".txt";
+        
+        Debug.Log(path + name);
+
+        StreamWriter writer = new StreamWriter(path + name);
+        for (int i = 0; i < qTable.Length; i++)
+        {
+            writer.WriteLine(String.Format("{0} {1} {2} {3}", qTable[i][0], qTable[i][1], qTable[i][2], qTable[i][3]));
+        }
+        writer.WriteLine();
+        writer.Close();
+    }
+
 }
 
 enum Action
