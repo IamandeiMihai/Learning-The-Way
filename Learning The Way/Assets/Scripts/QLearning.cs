@@ -44,7 +44,10 @@ public class QLearning : MonoBehaviour
     public bool demo;
     public String fileName;
 
- 
+
+
+    public GameObject playerCamera;
+    public GameObject minimapCamera;
 
     void Start()
     {
@@ -148,6 +151,8 @@ public class QLearning : MonoBehaviour
         {
             if (visualLearning)
             {
+                playerCamera.SetActive(true);
+                minimapCamera.SetActive(true);
                 // State reset
                 this.transform.position = start.position;
                 this.transform.rotation = startRotation;
@@ -157,6 +162,8 @@ public class QLearning : MonoBehaviour
                 newState = 0;
             } else
             {
+                playerCamera.SetActive(false);
+                minimapCamera.SetActive(false);
                 done = false;
                 rewardCurrentEpisode = 0;
                 currentState = UnityEngine.Random.Range(0, states.Count);
@@ -172,15 +179,8 @@ public class QLearning : MonoBehaviour
 
                     // Action
                     float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
-                    Action action;
-                    if (explorationRateThreshold > explorationRate)
-                    {
-                        action = GetBestAction(currentState);
-                    }
-                    else
-                    {
-                        action = GetRandomAction(currentState);
-                    }
+                    Action action = GetBestAction(currentState);
+
                     Debug.Log(qTable[currentState][0] + " " + qTable[currentState][1] + " " + qTable[currentState][2] + " " + qTable[currentState][3]);
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
@@ -251,8 +251,23 @@ public class QLearning : MonoBehaviour
                     sum += rewardsAllEpisodes[i];
                 }
                 Debug.Log(episode + ": " + sum / 1000f);
-            } 
-            yield return null;
+
+                if (!visualLearning)
+                {
+                    yield return null;
+                }
+            }
+
+            if (visualLearning)
+            {
+                yield return null;
+            }
+
+            if (episode > 99995)
+            {
+                visualLearning = true;
+                yield return null;
+            }
         }
         yield return null;
     }

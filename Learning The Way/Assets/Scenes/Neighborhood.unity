@@ -23744,6 +23744,12 @@ Transform:
   m_Father: {fileID: 1620097396}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1129815031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7855187184431375520, guid: 6404b9ef317382e4aabaedc17f60a0ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 7855187184544795363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1133278211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47413,7 +47419,7 @@ PrefabInstance:
       objectReference: {fileID: 1705978895}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: learningRate
-      value: 0.1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: numberOfEpisodes
@@ -47425,7 +47431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: demo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: path
@@ -47434,7 +47440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: fileName
-      value: QTABLEfwu9h2pl80
+      value: QTABLEa2o0bn5ye8
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: attenuationFactor
@@ -47444,6 +47450,14 @@ PrefabInstance:
       propertyPath: explorationDecayRate
       value: 0.0005
       objectReference: {fileID: 0}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1129815031}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: minimapCamera
+      value: 
+      objectReference: {fileID: 927838909}
     - target: {fileID: 1312939097, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
