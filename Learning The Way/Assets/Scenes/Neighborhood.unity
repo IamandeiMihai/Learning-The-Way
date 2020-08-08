@@ -47423,7 +47423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: numberOfEpisodes
-      value: 1000000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: maxStepsPerEpisode

@@ -269,7 +269,7 @@ public class QLearning : MonoBehaviour
 
             //rewardsAllEpisodes.Add(rewardCurrentEpisode);
 
-            if (episode % 1000 == 0)
+            if (episode % 100 == 0)
             {
                 /*float sum = 0;
                 for (int i = 0; i < rewardsAllEpisodes.Capacity; ++i)
@@ -279,7 +279,7 @@ public class QLearning : MonoBehaviour
                 Debug.Log(episode + ": " + sum / (numberOfEpisodes / 100));
                 rewardsAllEpisodes.Clear();*/
 
-                Debug.Log(episode + ": " + (float)winRatio / 1000);
+                Debug.Log(episode + ": " + (float)winRatio / 100);
                 winRatio = 0;
                 if (!visualLearning)
                 {
