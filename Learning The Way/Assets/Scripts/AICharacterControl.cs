@@ -10,6 +10,8 @@ public class AICharacterControl : MonoBehaviour
     }
 
     private float m_currentV = 0;
+    private float m_jumpTimeStamp = 0;
+    private float m_minJumpInterval = 3f;
     private readonly float m_interpolation = 10;
     [SerializeField] private Animator m_animator;
 
@@ -32,6 +34,13 @@ public class AICharacterControl : MonoBehaviour
     void Update()
     {
         Time.timeScale = timeSpeed;
+
+        bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+        if (this.GetComponent<QLearning>().demo_done == true && jumpCooldownOver)
+        {
+            m_jumpTimeStamp = Time.time;
+            m_animator.SetTrigger("Wave");
+        }
         MoveCharacter(target);
     }
 

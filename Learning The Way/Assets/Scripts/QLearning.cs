@@ -44,6 +44,7 @@ public class QLearning : MonoBehaviour
     private bool done;
 
     public bool demo;
+    public bool demo_done = false;
     public String fileName;
 
     int winRatio;
@@ -74,7 +75,7 @@ public class QLearning : MonoBehaviour
         if (demo == true)
         {
             StreamReader reader = new StreamReader(Application.persistentDataPath + "\\" + fileName + ".txt");
-            
+
             for (int i = 0; i < states.Count; i++)
             {
                 string[] line = reader.ReadLine().Split();
@@ -83,9 +84,14 @@ public class QLearning : MonoBehaviour
                 qTable[i][2] = float.Parse(line[2]);
                 qTable[i][3] = float.Parse(line[3]);
             }
-        }
 
-        StartCoroutine(qLearning());
+            StartCoroutine(run_demo());
+        }
+        else
+        {
+            StartCoroutine(qLearning());
+
+        }
     }
 
     Action GetRandomAction(int currentState)
@@ -153,7 +159,7 @@ public class QLearning : MonoBehaviour
         }
         return maxValue;
     }
-    
+
     IEnumerator qLearning()
     {
         for (int episode = 1; episode <= numberOfEpisodes; ++episode)
@@ -235,7 +241,7 @@ public class QLearning : MonoBehaviour
                         action = GetRandomAction(currentState);
                     }
                     visited[currentState] = true;
-                   
+
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     if (visited[newState] == true)
@@ -300,6 +306,52 @@ public class QLearning : MonoBehaviour
         }
         yield return null;
     }
+
+
+
+    IEnumerator run_demo()
+    {
+        playerCamera.SetActive(true);
+        minimapCamera.SetActive(true);
+        
+        // State reset
+        this.transform.position = start.position;
+        this.transform.rotation = startRotation;
+        done = false;
+        rewardCurrentEpisode = 0;
+        currentState = 0;
+        newState = 0;
+
+        // Learning
+        while(!done)
+        {
+
+            // Action
+            float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
+            Action action = GetBestAction(currentState);
+
+            control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
+            control.moveDone = false;
+            while (!control.moveDone) { yield return null; }
+
+            newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+            reward = states[newState].GetComponent<States>().reward;
+            done = states[newState].transform == end;
+
+            currentState = newState;
+            rewardCurrentEpisode += reward;
+
+            if (done == true)
+            {
+                demo_done = true;
+                break;
+            }
+            yield return null;
+        }
+    yield return null;
+}
+
+
 
     void OnApplicationQuit()
     {
