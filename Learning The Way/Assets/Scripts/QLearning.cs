@@ -13,19 +13,21 @@ public class QLearning : MonoBehaviour
 
     private AICharacterControl control;
 
-    public int numberOfEpisodes = 10000;
-    public int maxStepsPerEpisode = 30;
+    public int numberOfEpisodes;
+    public int maxStepsPerEpisode;
 
-    public float learningRate = 0.7f;
-    public float attenuationFactor = 0.99f;
+    public float learningRate;
+    public float attenuationFactor;
 
 
-    [SerializeField] float explorationRate = 1;
+    [SerializeField] float explorationRate;
     float maxExplorationRate = 1;
     float minExplorationRate = 0.01f;
-    public float explorationDecayRate = 0.01f;
+    public float explorationDecayRate;
 
-    [SerializeField] List<float> rewardsAllEpisodes;
+    //List<float> rewardsAllEpisodes;
+
+    List<bool> visited;
 
     float rewardCurrentEpisode;
 
@@ -44,16 +46,23 @@ public class QLearning : MonoBehaviour
     public bool demo;
     public String fileName;
 
-
+    int winRatio;
 
     public GameObject playerCamera;
     public GameObject minimapCamera;
 
     void Start()
     {
+        //rewardsAllEpisodes = new List<float>();
+
         control = GetComponent<AICharacterControl>();
 
         states.AddRange(GameObject.FindGameObjectsWithTag("state"));
+        visited = new List<bool>();
+        for (int i = 0; i < states.Count; ++i)
+        {
+            visited.Add(false);
+        }
         currentState = 0;
 
         qTable = new float[states.Count][];
@@ -149,6 +158,12 @@ public class QLearning : MonoBehaviour
     {
         for (int episode = 1; episode <= numberOfEpisodes; ++episode)
         {
+            for (int i = 0; i < visited.Count; ++i)
+            {
+                visited[i] = false;
+            }
+
+
             if (visualLearning)
             {
                 playerCamera.SetActive(true);
@@ -219,11 +234,18 @@ public class QLearning : MonoBehaviour
                     {
                         action = GetRandomAction(currentState);
                     }
-
+                    visited[currentState] = true;
                    
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    reward = states[newState].GetComponent<States>().reward;
+                    if (visited[newState] == true)
+                    {
+                        reward = -5;
+                    }
+                    else
+                    {
+                        reward = states[newState].GetComponent<States>().reward;
+                    }
                     done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
                     // Learning
@@ -234,24 +256,31 @@ public class QLearning : MonoBehaviour
 
                     if (done == true)
                     {
+                        if (states[newState].transform == end)
+                        {
+                            winRatio++;
+                        }
                         break;
                     }
                 }
             }
 
-            explorationRate = minExplorationRate + (maxExplorationRate - minExplorationRate) * Mathf.Exp(-explorationDecayRate * episode);
+            //explorationRate = minExplorationRate + (maxExplorationRate - minExplorationRate) * Mathf.Exp(-explorationDecayRate * episode);
 
-            rewardsAllEpisodes.Add(rewardCurrentEpisode);
+            //rewardsAllEpisodes.Add(rewardCurrentEpisode);
 
             if (episode % 1000 == 0)
             {
-                float sum = 0;
-                for (int i = episode - 1000; i < episode; ++i)
+                /*float sum = 0;
+                for (int i = 0; i < rewardsAllEpisodes.Capacity; ++i)
                 {
                     sum += rewardsAllEpisodes[i];
                 }
-                Debug.Log(episode + ": " + sum / 1000f);
+                Debug.Log(episode + ": " + sum / (numberOfEpisodes / 100));
+                rewardsAllEpisodes.Clear();*/
 
+                Debug.Log(episode + ": " + (float)winRatio / 1000);
+                winRatio = 0;
                 if (!visualLearning)
                 {
                     yield return null;
