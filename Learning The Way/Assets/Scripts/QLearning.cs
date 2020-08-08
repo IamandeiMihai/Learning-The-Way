@@ -20,7 +20,7 @@ public class QLearning : MonoBehaviour
     public float attenuationFactor = 0.99f;
 
 
-    float explorationRate = 1;
+    [SerializeField] float explorationRate = 1;
     float maxExplorationRate = 1;
     float minExplorationRate = 0.01f;
     public float explorationDecayRate = 0.01f;
@@ -263,7 +263,7 @@ public class QLearning : MonoBehaviour
                 yield return null;
             }
 
-            if (episode > 99995)
+            if (episode > numberOfEpisodes - 5)
             {
                 visualLearning = true;
                 yield return null;
