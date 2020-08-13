@@ -64,6 +64,7 @@ public class QLearning : MonoBehaviour
         control = GetComponent<AICharacterControl>();
 
         states.AddRange(GameObject.FindGameObjectsWithTag("state"));
+        villains = GameObject.FindGameObjectsWithTag("villain");
         visited = new List<bool>();
         for (int i = 0; i < states.Count; ++i)
         {
@@ -98,7 +99,7 @@ public class QLearning : MonoBehaviour
 
         }
 
-        villains = GameObject.FindGameObjectsWithTag("villain");
+        
     }
 
     void Update()
