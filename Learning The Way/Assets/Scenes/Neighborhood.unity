@@ -35286,7 +35286,7 @@ PrefabInstance:
     - target: {fileID: 6220702503957441227, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: reward
-      value: -10
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6220702503957441227, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
@@ -47639,7 +47639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: demo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: path
