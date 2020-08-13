@@ -27325,6 +27325,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3787163e84369354999e5f83cde92896, type: 3}
+--- !u!1 &1324652402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6220702502832685517, guid: 349ece727706c064aa91c35f2ea88331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1572606485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1325078633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 488023249612712502, guid: 2135d3e30c5a748cf8220a004e2b1315,
@@ -34361,7 +34367,7 @@ PrefabInstance:
         type: 3}
       propertyPath: westNeighbour
       value: 
-      objectReference: {fileID: 1907666389}
+      objectReference: {fileID: 2022299248}
     - target: {fileID: 6220702502683802817, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: reward
@@ -34492,6 +34498,11 @@ PrefabInstance:
       propertyPath: reward
       value: -0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 6220702502832685519, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: northNeighbour
+      value: 
+      objectReference: {fileID: 2022299248}
     - target: {fileID: 6220702502845846204, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: m_TagString
@@ -34621,7 +34632,17 @@ PrefabInstance:
         type: 3}
       propertyPath: eastNeighbour
       value: 
-      objectReference: {fileID: 734622310}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220702502986730458, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: southNeighbour
+      value: 
+      objectReference: {fileID: 2022299248}
+    - target: {fileID: 6220702502986730459, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -115.42
+      objectReference: {fileID: 0}
     - target: {fileID: 6220702502998275341, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: m_TagString
@@ -35322,6 +35343,21 @@ PrefabInstance:
       propertyPath: reward
       value: -0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 6604965385954496763, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: northNeighbour
+      value: 
+      objectReference: {fileID: 1907666389}
+    - target: {fileID: 6604965385954496763, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: southNeighbour
+      value: 
+      objectReference: {fileID: 1324652402}
+    - target: {fileID: 6604965385954496763, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: eastNeighbour
+      value: 
+      objectReference: {fileID: 734622310}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349ece727706c064aa91c35f2ea88331, type: 3}
 --- !u!1 &1597961052
@@ -45108,6 +45144,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2022113079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2022299248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2407854415007674623, guid: 349ece727706c064aa91c35f2ea88331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1572606485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2023589245
 GameObject:
   m_ObjectHideFlags: 0
@@ -47606,7 +47648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: fileName
-      value: QTABLE5mbkhsjnih
+      value: QTABLEiwld4eehyc
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: attenuationFactor
@@ -47630,7 +47672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: visualLearning
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: timeSpeed
