@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502718825642}
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503180056285}
   southNeighbour: {fileID: 6220702502848601132}
@@ -284,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502845846204}
   southNeighbour: {fileID: 0}
@@ -319,7 +322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 30
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502112721109
 MeshFilter:
@@ -380,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503790412565}
   southNeighbour: {fileID: 0}
@@ -476,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503853798030}
   eastNeighbour: {fileID: 6220702503574440959}
   southNeighbour: {fileID: 6220702503180056285}
@@ -511,7 +516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502159135193
 MeshFilter:
@@ -572,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -607,7 +613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502189163574
 MeshFilter:
@@ -668,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503124427326}
   southNeighbour: {fileID: 0}
@@ -798,105 +805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502902815268}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502542513638}
-  westNeighbour: {fileID: 6220702502614814822}
---- !u!1 &6220702502230601872
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6220702502230601875}
-  - component: {fileID: 6220702502230601876}
-  - component: {fileID: 6220702502230601877}
-  - component: {fileID: 6220702502230601874}
-  m_Layer: 0
-  m_Name: Sphere (63)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6220702502230601875
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502230601872}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90.1, y: 0, z: -104.981}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6220702502230601876
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502230601872}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6220702502230601877
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502230601872}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!114 &6220702502230601874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502230601872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 6220702502669387676}
-  southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 0}
 --- !u!1 &6220702502253082202
 GameObject:
@@ -990,6 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503548391775}
   eastNeighbour: {fileID: 6220702503357583565}
   southNeighbour: {fileID: 6220702502599430371}
@@ -1025,7 +938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502313490270
 MeshFilter:
@@ -1086,6 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1121,7 +1035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502357691699
 MeshFilter:
@@ -1182,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1217,7 +1132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 31
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502376683303
 MeshFilter:
@@ -1278,6 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503574440959}
@@ -1374,6 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503946366300}
   eastNeighbour: {fileID: 6220702502495093786}
   southNeighbour: {fileID: 0}
@@ -1409,7 +1326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502400853413
 MeshFilter:
@@ -1470,6 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1566,6 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502502547463}
   eastNeighbour: {fileID: 6220702503444099874}
   southNeighbour: {fileID: 6220702503728242030}
@@ -1601,7 +1520,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 33
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502444791994
 MeshFilter:
@@ -1662,6 +1581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502772142004}
   southNeighbour: {fileID: 0}
@@ -1697,7 +1617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502446066873
 MeshFilter:
@@ -1758,6 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1842,6 +1763,7 @@ Transform:
   - {fileID: 6220702502495093789}
   - {fileID: 6220702502397844742}
   - {fileID: 6220702502845846207}
+  - {fileID: 6220702503957441224}
   m_Father: {fileID: 6220702502208199185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1937,7 +1859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northNeighbour: {fileID: 6220702503253453775}
+  reward: 0
+  northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503156956362}
   southNeighbour: {fileID: 6220702502845846204}
   westNeighbour: {fileID: 6220702502397844743}
@@ -2033,6 +1956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503197400318}
   southNeighbour: {fileID: 6220702502406057141}
@@ -2129,6 +2053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502228640618}
   eastNeighbour: {fileID: 6220702503853798030}
   southNeighbour: {fileID: 0}
@@ -2164,7 +2089,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 27
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502563088020
 MeshFilter:
@@ -2225,6 +2150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502633384902}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -2260,7 +2186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502587253047
 MeshFilter:
@@ -2321,6 +2247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -2417,6 +2344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502253082202}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -2513,106 +2441,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502683802847}
   eastNeighbour: {fileID: 6220702502357691599}
   southNeighbour: {fileID: 6220702503957441225}
   westNeighbour: {fileID: 6220702502659478855}
---- !u!1 &6220702502614814822
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6220702502614814825}
-  - component: {fileID: 6220702502614814826}
-  - component: {fileID: 6220702502614814827}
-  - component: {fileID: 6220702502614814824}
-  m_Layer: 0
-  m_Name: Sphere (87)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6220702502614814825
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502614814822}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.2, y: 0, z: -8.59}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 32
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6220702502614814826
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502614814822}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6220702502614814827
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502614814822}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!114 &6220702502614814824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702502614814822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 6220702502228640618}
-  southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
 --- !u!1 &6220702502633384902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503980190026}
   eastNeighbour: {fileID: 6220702501973320063}
   southNeighbour: {fileID: 6220702502563088016}
@@ -2740,7 +2574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502635096942
 MeshFilter:
@@ -2801,6 +2635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502902815268}
@@ -2836,7 +2671,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502659478859
 MeshFilter:
@@ -2897,6 +2732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502609727775}
   southNeighbour: {fileID: 0}
@@ -2993,10 +2829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502446066869}
   southNeighbour: {fileID: 6220702502811876987}
-  westNeighbour: {fileID: 6220702502230601872}
+  westNeighbour: {fileID: 0}
 --- !u!1 &6220702502683802847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,6 +2926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502313490266}
   southNeighbour: {fileID: 6220702502609727775}
@@ -3185,6 +3023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503186868777}
   southNeighbour: {fileID: 6220702503749199082}
@@ -3220,7 +3059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502718825646
 MeshFilter:
@@ -3281,6 +3120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702501973320063}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -3377,6 +3217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503749199082}
   southNeighbour: {fileID: 6220702503364250091}
@@ -3473,6 +3314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502400853409}
   southNeighbour: {fileID: 6220702503353835967}
@@ -3508,7 +3350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502789012867
 MeshFilter:
@@ -3569,6 +3411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503108789871}
   southNeighbour: {fileID: 0}
@@ -3665,6 +3508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502669387676}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -3761,6 +3605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502986730456}
   eastNeighbour: {fileID: 6220702503856416733}
   southNeighbour: {fileID: 0}
@@ -3857,6 +3702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502495093786}
   eastNeighbour: {fileID: 6220702503078466711}
   southNeighbour: {fileID: 0}
@@ -3953,6 +3799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502030908222}
   eastNeighbour: {fileID: 6220702503414406551}
   southNeighbour: {fileID: 0}
@@ -3988,7 +3835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 22
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502878305025
 MeshFilter:
@@ -4049,6 +3896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4145,6 +3993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502635096938}
   eastNeighbour: {fileID: 6220702502998275341}
   southNeighbour: {fileID: 6220702502228640618}
@@ -4180,7 +4029,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502944247612
 MeshFilter:
@@ -4241,6 +4090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503710677651}
@@ -4337,6 +4187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503615687962}
@@ -4372,7 +4223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 21
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702502961842467
 MeshFilter:
@@ -4433,6 +4284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4529,6 +4381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502832685517}
@@ -4625,6 +4478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503353835967}
   eastNeighbour: {fileID: 6220702503710677651}
   southNeighbour: {fileID: 6220702503614210852}
@@ -4721,6 +4575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4817,6 +4672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503124427326}
   eastNeighbour: {fileID: 6220702503548391775}
   southNeighbour: {fileID: 6220702503289484838}
@@ -4852,7 +4708,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 25
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503115356501
 MeshFilter:
@@ -4913,6 +4769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503414406551}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -5009,6 +4866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503949634092}
   southNeighbour: {fileID: 6220702503156956362}
@@ -5105,6 +4963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503856416733}
   eastNeighbour: {fileID: 6220702502811876987}
   southNeighbour: {fileID: 6220702503108789871}
@@ -5140,7 +4999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 20
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503138460090
 MeshFilter:
@@ -5201,6 +5060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -5297,6 +5157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503121726769}
   eastNeighbour: {fileID: 6220702503980190026}
   southNeighbour: {fileID: 0}
@@ -5393,6 +5254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502150946841}
   eastNeighbour: {fileID: 6220702502878305053}
   southNeighbour: {fileID: 6220702503356746005}
@@ -5489,6 +5351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503799034086}
@@ -5524,7 +5387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 23
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503197400290
 MeshFilter:
@@ -5585,106 +5448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 6220702502502547463}
---- !u!1 &6220702503253453775
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6220702503253453774}
-  - component: {fileID: 6220702503253451827}
-  - component: {fileID: 6220702503253451824}
-  - component: {fileID: 6220702503253451825}
-  m_Layer: 0
-  m_Name: Sphere (56)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6220702503253453774
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702503253453775}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.396, y: 0, z: 56}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6220702503253451827
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702503253453775}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6220702503253451824
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702503253453775}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!114 &6220702503253451825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220702503253453775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 6220702502495093786}
-  westNeighbour: {fileID: 0}
 --- !u!1 &6220702503289484838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,6 +5545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503108789871}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -5812,7 +5581,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 28
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503301310855
 MeshFilter:
@@ -5873,6 +5642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502406057141}
   southNeighbour: {fileID: 0}
@@ -5907,13 +5677,11 @@ Transform:
   - {fileID: 6220702502099072054}
   - {fileID: 6220702503078466710}
   - {fileID: 6220702503946366303}
-  - {fileID: 6220702503253453774}
   - {fileID: 6220702504021484098}
   - {fileID: 6220702503736207584}
   - {fileID: 6220702503898078150}
   - {fileID: 6220702502789012894}
   - {fileID: 6220702502189163573}
-  - {fileID: 6220702502230601875}
   - {fileID: 6220702502446066868}
   - {fileID: 6220702502400853408}
   - {fileID: 6220702502587253042}
@@ -5923,7 +5691,6 @@ Transform:
   - {fileID: 6220702502159135188}
   - {fileID: 6220702502357691598}
   - {fileID: 6220702502659478854}
-  - {fileID: 6220702503957441224}
   - {fileID: 6220702503138460089}
   - {fileID: 6220702502961842494}
   - {fileID: 6220702502878305052}
@@ -5936,7 +5703,6 @@ Transform:
   - {fileID: 6220702503744675916}
   - {fileID: 6220702502112721104}
   - {fileID: 6220702502376683298}
-  - {fileID: 6220702502614814825}
   - {fileID: 6220702502444791993}
   m_Father: {fileID: 6220702502208199185}
   m_RootOrder: 2
@@ -6033,6 +5799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502772142004}
   eastNeighbour: {fileID: 6220702502587253043}
   southNeighbour: {fileID: 6220702502998275341}
@@ -6129,6 +5896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503180056285}
   eastNeighbour: {fileID: 6220702502502547463}
   southNeighbour: {fileID: 0}
@@ -6225,6 +5993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503411790954}
@@ -6321,6 +6090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502761888301}
   eastNeighbour: {fileID: 6220702502683802847}
   southNeighbour: {fileID: 0}
@@ -6417,6 +6187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503357583565}
   eastNeighbour: {fileID: 6220702502945684237}
   southNeighbour: {fileID: 0}
@@ -6513,6 +6284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503115356497}
@@ -6609,6 +6381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -6705,6 +6478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502253082202}
@@ -6801,6 +6575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502599430371}
   southNeighbour: {fileID: 6220702503863132697}
@@ -6897,6 +6672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502376683299}
   eastNeighbour: {fileID: 6220702502961842495}
   southNeighbour: {fileID: 0}
@@ -6993,6 +6769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502998275341}
   eastNeighbour: {fileID: 6220702503138460086}
   southNeighbour: {fileID: 0}
@@ -7089,6 +6866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502945684237}
   eastNeighbour: {fileID: 6220702502150946841}
   southNeighbour: {fileID: 0}
@@ -7185,6 +6963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502944247608}
   eastNeighbour: {fileID: 6220702502159135189}
   southNeighbour: {fileID: 0}
@@ -7220,7 +6999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 24
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503728242002
 MeshFilter:
@@ -7281,6 +7060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502406057141}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -7316,7 +7096,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503736207589
 MeshFilter:
@@ -7377,6 +7157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503574424254}
   southNeighbour: {fileID: 0}
@@ -7412,7 +7193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 29
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503744676017
 MeshFilter:
@@ -7473,6 +7254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -7569,6 +7351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502690833278}
   eastNeighbour: {fileID: 6220702503799034086}
   southNeighbour: {fileID: 0}
@@ -7665,6 +7448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503744675917}
   southNeighbour: {fileID: 6220702503980190026}
@@ -7761,6 +7545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503186868777}
   eastNeighbour: {fileID: 6220702503353835967}
   southNeighbour: {fileID: 0}
@@ -7857,6 +7642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502150946841}
@@ -7953,6 +7739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503124427326}
@@ -8049,6 +7836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503574424254}
   eastNeighbour: {fileID: 6220702504040106346}
   southNeighbour: {fileID: 0}
@@ -8084,7 +7872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503898078155
 MeshFilter:
@@ -8145,6 +7933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503289484838}
   southNeighbour: {fileID: 0}
@@ -8241,6 +8030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502397844743}
@@ -8337,6 +8127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702504040106346}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -8371,8 +8162,8 @@ Transform:
   m_LocalPosition: {x: 8.1, y: 0, z: -5.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 19
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702503957441229
 MeshFilter:
@@ -8433,6 +8224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702502609727775}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -8529,6 +8321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 6220702503790412565}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502633384902}
@@ -8564,7 +8357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6220702504021484103
 MeshFilter:
@@ -8625,6 +8418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503863132697}
   southNeighbour: {fileID: 0}
@@ -8721,6 +8515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503949634092}

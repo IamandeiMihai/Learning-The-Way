@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AICharacterControl : MonoBehaviour
+public class AICharacterControlVillain : MonoBehaviour
 {
     public void Initialize(GameObject character)
     {
@@ -26,19 +26,19 @@ public class AICharacterControl : MonoBehaviour
 
     private void Awake()
     {
-        if (!m_animator) { gameObject.GetComponent<Animator>(); }   
+        if (!m_animator) { gameObject.GetComponent<Animator>(); }
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
-        if (this.GetComponent<QLearning>().demo_done == true && jumpCooldownOver)
-        {
-            m_jumpTimeStamp = Time.time;
-            m_animator.SetTrigger("Wave");
-        }
+        //bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+        //if (this.GetComponent<QLearning>().demo_done == true && jumpCooldownOver)
+        //{
+        //    m_jumpTimeStamp = Time.time;
+        //    m_animator.SetTrigger("Wave");
+        //}
         MoveCharacter(target);
     }
 
@@ -69,7 +69,8 @@ public class AICharacterControl : MonoBehaviour
             moveDone = true;
             rotationDone = false;
             m_animator.SetFloat("MoveSpeed", 0);
-        } else
+        }
+        else
         {
             float v = 0.5f;
             m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);

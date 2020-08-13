@@ -16,4 +16,32 @@ public class States : MonoBehaviour
         GameObject[] nextStates = { northNeighbour, eastNeighbour, southNeighbour, westNeighbour };
         return nextStates;
     }
+
+    public GameObject[] NotNullNextStates()
+    {
+
+        List<GameObject> nextStates = new List<GameObject>();
+
+        if (northNeighbour != null)
+        {
+            nextStates.Add(northNeighbour);
+        }
+
+        if (eastNeighbour != null)
+        {
+            nextStates.Add(eastNeighbour);
+        }
+
+        if (southNeighbour != null)
+        {
+            nextStates.Add(southNeighbour);
+        }
+
+        if (westNeighbour != null)
+        {
+            nextStates.Add(westNeighbour);
+        }
+
+        return nextStates.ToArray();
+    }
 }

@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class QLearning : MonoBehaviour
 {
+    [Range(1.0f, 50.0f)]
+    public float timeSpeed;
+
     public bool visualLearning;
 
     const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -52,6 +55,8 @@ public class QLearning : MonoBehaviour
     public GameObject playerCamera;
     public GameObject minimapCamera;
 
+    private GameObject[] villains;
+
     void Start()
     {
         //rewardsAllEpisodes = new List<float>();
@@ -92,6 +97,13 @@ public class QLearning : MonoBehaviour
             StartCoroutine(qLearning());
 
         }
+
+        villains = GameObject.FindGameObjectsWithTag("villain");
+    }
+
+    void Update()
+    {
+        Time.timeScale = timeSpeed;
     }
 
     Action GetRandomAction(int currentState)
@@ -181,6 +193,7 @@ public class QLearning : MonoBehaviour
                 rewardCurrentEpisode = 0;
                 currentState = 0;
                 newState = 0;
+
             } else
             {
                 playerCamera.SetActive(false);
@@ -189,6 +202,11 @@ public class QLearning : MonoBehaviour
                 rewardCurrentEpisode = 0;
                 currentState = UnityEngine.Random.Range(0, states.Count);
                 newState = currentState;
+            }
+
+            foreach (GameObject villain in villains)
+            {
+                villain.GetComponent<VillainAI>().resetVillain();
             }
 
             if (visualLearning)
