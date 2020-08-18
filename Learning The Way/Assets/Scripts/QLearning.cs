@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class QLearning : MonoBehaviour
 {
-    [Range(1.0f, 50.0f)]
+    [Range(1.0f, 100.0f)]
     public float timeSpeed;
 
     public bool visualLearning;
@@ -219,15 +219,32 @@ public class QLearning : MonoBehaviour
 
                     // Action
                     float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
-                    Action action = GetBestAction(currentState);
-
+                    Action action;
+                    if (explorationRateThreshold > explorationRate)
+                    {
+                        action = GetBestAction(currentState);
+                    }
+                    else
+                    {
+                        action = GetRandomAction(currentState);
+                    }
+                    visited[currentState] = true;
+                   
                     Debug.Log(qTable[currentState][0] + " " + qTable[currentState][1] + " " + qTable[currentState][2] + " " + qTable[currentState][3]);
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
                     while (!control.moveDone) { yield return null; }
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    reward = states[newState].GetComponent<States>().reward;
+                    if (visited[newState] == true)
+                    {
+                        reward = -5;
+                    }
+                    else
+                    {
+                        reward = states[newState].GetComponent<States>().reward;
+                    }
+
                     done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
                     // Learning
