@@ -64,6 +64,7 @@ public class QLearning : MonoBehaviour
         control = GetComponent<AICharacterControl>();
 
         states.AddRange(GameObject.FindGameObjectsWithTag("state"));
+        GameObject.Find("Points").GetComponent<MapStatus>().Initialze();
         villains = GameObject.FindGameObjectsWithTag("villain");
         visited = new List<bool>();
         for (int i = 0; i < states.Count; ++i)
@@ -201,7 +202,6 @@ public class QLearning : MonoBehaviour
                 newState = 0;
                 this.GetComponent<AICharacterControl>().attacked = false;
                 this.GetComponent<AICharacterControl>().currentState = states.IndexOf(start.gameObject);
-
             }
             else
             {
@@ -211,6 +211,7 @@ public class QLearning : MonoBehaviour
                 rewardCurrentEpisode = 0;
                 currentState = UnityEngine.Random.Range(0, states.Count);
                 newState = currentState;
+                this.GetComponent<AICharacterControl>().currentState = currentState;
             }
 
             foreach (GameObject villain in villains)
@@ -253,6 +254,7 @@ public class QLearning : MonoBehaviour
                         }
                         yield return null;
                     }
+                    this.GetComponent<AICharacterControl>().currentState = newState;
 
                     if (done == true)
                     {
@@ -394,8 +396,9 @@ public class QLearning : MonoBehaviour
         this.transform.rotation = startRotation;
         done = false;
         rewardCurrentEpisode = 0;
-        currentState = 0;
+        currentState = states.IndexOf(start.gameObject);
         newState = 0;
+        this.GetComponent<AICharacterControl>().currentState = states.IndexOf(start.gameObject);
 
         // Learning
         while (!done)
@@ -418,6 +421,8 @@ public class QLearning : MonoBehaviour
                 }
                 yield return null;
             }
+            this.GetComponent<AICharacterControl>().currentState = newState;
+
 
             if (done == true)
             {
