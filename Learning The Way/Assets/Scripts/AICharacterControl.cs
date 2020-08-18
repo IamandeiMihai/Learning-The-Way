@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AICharacterControl : MonoBehaviour
 {
+    [SerializeField] private GameObject[] villains;
+    public bool attacked = false;
+    public int currentState = 0;
+
     public void Initialize(GameObject character)
     {
         m_animator = character.GetComponent<Animator>();
@@ -26,7 +30,9 @@ public class AICharacterControl : MonoBehaviour
 
     private void Awake()
     {
-        if (!m_animator) { gameObject.GetComponent<Animator>(); }   
+        if (!m_animator) { gameObject.GetComponent<Animator>(); }
+
+        villains = GameObject.FindGameObjectsWithTag("villain");
     }
 
     // Update is called once per frame
@@ -76,6 +82,34 @@ public class AICharacterControl : MonoBehaviour
             m_animator.SetFloat("MoveSpeed", m_currentV);
 
             moveDone = false;
+        }
+    }
+
+    public bool IsAttacked()
+    {
+        // verificam coliziune cu inamicul -- pentru partea vizuala/demo
+        if (attacked == true)
+        {
+            return true;
+        }
+
+        // verificam daca starea copilului e aceeasi cu starea inamicului -- pentru learning
+        foreach (GameObject villain in villains)
+        {
+            if (villain.GetComponent<VillainAI>().currentState == currentState)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "villain")
+        {
+            attacked = true;
         }
     }
 }

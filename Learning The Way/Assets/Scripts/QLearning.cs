@@ -107,6 +107,11 @@ public class QLearning : MonoBehaviour
         Time.timeScale = timeSpeed;
     }
 
+    public int GetIndexState(GameObject state)
+    {
+        return states.IndexOf(state);
+    }
+
     Action GetRandomAction(int currentState)
     {
         GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
@@ -194,6 +199,7 @@ public class QLearning : MonoBehaviour
                 rewardCurrentEpisode = 0;
                 currentState = 0;
                 newState = 0;
+                this.GetComponent<AICharacterControl>().attacked = false;
 
             } else
             {
@@ -233,7 +239,23 @@ public class QLearning : MonoBehaviour
                     Debug.Log(qTable[currentState][0] + " " + qTable[currentState][1] + " " + qTable[currentState][2] + " " + qTable[currentState][3]);
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
-                    while (!control.moveDone) { yield return null; }
+                    while (!control.moveDone)
+                    {
+                        if (this.GetComponent<AICharacterControl>().IsAttacked())
+                        {
+                            newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                            qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
+                            rewardCurrentEpisode -= 10;
+                            done = true;
+                            break;
+                        }
+                        yield return null;
+                    }
+
+                    if (done == true)
+                    {
+                        break;
+                    }
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     if (visited[newState] == true)
@@ -280,15 +302,24 @@ public class QLearning : MonoBehaviour
 
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    if (visited[newState] == true)
+                    this.GetComponent<AICharacterControl>().currentState = newState;
+                    if (this.GetComponent<AICharacterControl>().IsAttacked())
                     {
-                        reward = -5;
+                        reward = -10;
+                        done = true;
                     }
                     else
                     {
-                        reward = states[newState].GetComponent<States>().reward;
+                        if (visited[newState] == true)
+                        {
+                            reward = -5;
+                        }
+                        else
+                        {
+                            reward = states[newState].GetComponent<States>().reward;
+                        }
+                        done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
                     }
-                    done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
                     // Learning
                     qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
@@ -303,6 +334,12 @@ public class QLearning : MonoBehaviour
                             winRatio++;
                         }
                         break;
+                    }
+
+                    // mut inamicii
+                    foreach (GameObject villain in villains)
+                    {
+                        villain.GetComponent<VillainAI>().ChangeState();
                     }
                 }
             }
@@ -349,7 +386,7 @@ public class QLearning : MonoBehaviour
     {
         playerCamera.SetActive(true);
         minimapCamera.SetActive(true);
-        
+
         // State reset
         this.transform.position = start.position;
         this.transform.rotation = startRotation;
@@ -359,7 +396,7 @@ public class QLearning : MonoBehaviour
         newState = 0;
 
         // Learning
-        while(!done)
+        while (!done)
         {
 
             // Action
@@ -368,7 +405,22 @@ public class QLearning : MonoBehaviour
 
             control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
             control.moveDone = false;
-            while (!control.moveDone) { yield return null; }
+            while (!control.moveDone)
+            {
+                if (this.GetComponent<AICharacterControl>().IsAttacked())
+                {
+                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                    rewardCurrentEpisode -= 10;
+                    done = true;
+                    break;
+                }
+                yield return null;
+            }
+
+            if (done == true)
+            {
+                break;
+            }
 
             newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
             reward = states[newState].GetComponent<States>().reward;
@@ -384,8 +436,8 @@ public class QLearning : MonoBehaviour
             }
             yield return null;
         }
-    yield return null;
-}
+        yield return null;
+    }
 
 
 
@@ -409,6 +461,11 @@ public class QLearning : MonoBehaviour
         }
         writer.WriteLine();
         writer.Close();
+    }
+
+    public bool visualVillains()
+    {
+        return demo || visualLearning;
     }
 
 }
