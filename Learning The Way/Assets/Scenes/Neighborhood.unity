@@ -31277,6 +31277,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1475872721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1483519484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6220702502208199214, guid: 349ece727706c064aa91c35f2ea88331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1572606485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1483519486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483519484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdbf11903f25e1429210f21bf21d57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToState: []
 --- !u!1001 &1491505538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47709,7 +47728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: demo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: path
@@ -47752,6 +47771,10 @@ PrefabInstance:
       propertyPath: child
       value: 
       objectReference: {fileID: 791867490}
+    - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
+      propertyPath: demo_done
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1312939097, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
