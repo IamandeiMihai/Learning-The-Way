@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class QLearning : MonoBehaviour
 {
-    [Range(1.0f, 100.0f)]
+    [Range(1.0f, 50.0f)]
     public float timeSpeed;
 
     public bool visualLearning;
@@ -200,8 +200,10 @@ public class QLearning : MonoBehaviour
                 currentState = 0;
                 newState = 0;
                 this.GetComponent<AICharacterControl>().attacked = false;
+                this.GetComponent<AICharacterControl>().currentState = states.IndexOf(start.gameObject);
 
-            } else
+            }
+            else
             {
                 playerCamera.SetActive(false);
                 minimapCamera.SetActive(false);
