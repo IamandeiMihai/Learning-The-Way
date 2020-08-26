@@ -86,10 +86,14 @@ public class QLearning : MonoBehaviour
         if (nextPosition != null)
         {
             int nextState = states.IndexOf(nextPosition);
-            return mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject));
+            if (nextPosition.name.Equals(end.name))
+            {
+                return 1;
+            }
+            return 1 / Mathf.Pow(mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject)), 2);
         }
 
-        return 999;
+        return 0;
     }
 
 
@@ -218,7 +222,7 @@ public class QLearning : MonoBehaviour
             {
                 float q = GetQForAction((Action)i);
 
-                if (q > bestValue)
+                if (q > bestValue || bestAction == Action.IDLE)
                 {
                     bestValue = q;
                     bestAction = (Action)i;
@@ -330,13 +334,13 @@ public class QLearning : MonoBehaviour
                             newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                             // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
 
-                            float difference = (-10) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
+                            float difference = (-1) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                             for (int i = 0; i < features.Count; ++i)
                             {
                                 features[i].weight = features[i].weight + learningRate * difference * features[i].value(action);
                             }
 
-                            rewardCurrentEpisode -= 10;
+                            rewardCurrentEpisode -= 1;
                             done = true;
                             break;
                         }
@@ -403,7 +407,7 @@ public class QLearning : MonoBehaviour
                     this.GetComponent<AICharacterControl>().currentState = newState;
                     if (this.GetComponent<AICharacterControl>().IsAttacked())
                     {
-                        reward = -10;
+                        reward = -1;
                         done = true;
                     }
                     else
@@ -423,9 +427,11 @@ public class QLearning : MonoBehaviour
                     // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
 
                     float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
+
                     for (int i = 0; i < features.Count; ++i)
                     {
                         features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
+                        
                     }
 
                     currentState = newState;
