@@ -7,6 +7,21 @@ using UnityEngine;
 
 public class QLearning : MonoBehaviour
 {
+    class FeatureState {
+        public Feature value;
+        public float weight;
+
+        public FeatureState(Feature value, float weight)
+        {
+            this.value = value;
+            this.weight = weight;
+        }
+    };
+
+    delegate float Feature(Action action);
+
+    List<FeatureState> features;
+
     [Range(1.0f, 50.0f)]
     public float timeSpeed;
 
@@ -57,14 +72,66 @@ public class QLearning : MonoBehaviour
 
     private GameObject[] villains;
 
+    MapStatus mapStatus;
+
+
+    float Bias(Action action)
+    {
+        return 1f;
+    }
+
+    float DistanceToFinish(Action action)
+    {
+        GameObject nextPosition = states[currentState].GetComponent<States>().NextStates()[(int)action];
+        if (nextPosition != null)
+        {
+            int nextState = states.IndexOf(nextPosition);
+            return mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject));
+        }
+
+        return 999;
+    }
+
+
+    float OldManNearby(Action action)
+    {
+        GameObject nextPosition = states[currentState].GetComponent<States>().NextStates()[(int)action];
+        if (nextPosition != null)
+        {
+            int nextState = states.IndexOf(nextPosition);
+            foreach (GameObject villain in villains)
+            {
+                if (mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().currentState) < 2)
+                {
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+
+    float IsOnEnd(Action action)
+    {
+        GameObject nextPosition = states[currentState].GetComponent<States>().NextStates()[(int)action];
+        return nextPosition.transform.parent.name.Equals("Ends") ? 1 : 0;
+    }
+
     void Start()
     {
+        features = new List<FeatureState>();
+        features.Add(new FeatureState(Bias, 0));
+        features.Add(new FeatureState(DistanceToFinish, 0));
+        features.Add(new FeatureState(OldManNearby, 0));
+        features.Add(new FeatureState(IsOnEnd, 0));
+
+
         //rewardsAllEpisodes = new List<float>();
 
         control = GetComponent<AICharacterControl>();
 
         states.AddRange(GameObject.FindGameObjectsWithTag("state"));
-        GameObject.Find("Points").GetComponent<MapStatus>().Initialze();
+        mapStatus = GameObject.Find("Points").GetComponent<MapStatus>();
+        mapStatus.Initialze();
         villains = GameObject.FindGameObjectsWithTag("villain");
         visited = new List<bool>();
         for (int i = 0; i < states.Count; ++i)
@@ -127,6 +194,17 @@ public class QLearning : MonoBehaviour
         return (Action)nonNull[UnityEngine.Random.Range(0, nonNull.Count)];
     }
 
+    float GetQForAction(Action action)
+    {
+        float q = 0;
+        foreach (FeatureState featureState in features)
+        {
+            q += featureState.weight * featureState.value(action);
+        }
+
+        return q;
+    }
+
     Action GetBestAction(int currentState)
     {
         GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
@@ -138,18 +216,19 @@ public class QLearning : MonoBehaviour
         {
             if (neighbours[i] != null)
             {
-                if (qTable[currentState][i] > bestValue)
+                float q = GetQForAction((Action)i);
+
+                if (q > bestValue)
                 {
-                    bestValue = qTable[currentState][i];
+                    bestValue = q;
                     bestAction = (Action)i;
-                }
-                else
+                } else
                 {
-                    if (qTable[currentState][i] == bestValue)
+                    if (q == bestValue)
                     {
                         if (UnityEngine.Random.Range(0, 2) == 1)
                         {
-                            bestValue = qTable[currentState][i];
+                            bestValue = q;
                             bestAction = (Action)i;
                         }
                     }
@@ -170,12 +249,15 @@ public class QLearning : MonoBehaviour
         {
             if (neighbours[i] != null)
             {
-                if (qTable[state][i] > maxValue)
+                float q = GetQForAction((Action)i);
+
+                if (q > maxValue)
                 {
-                    maxValue = qTable[state][i];
+                    maxValue = q;
                 }
             }
         }
+
         return maxValue;
     }
 
@@ -237,9 +319,8 @@ public class QLearning : MonoBehaviour
                     {
                         action = GetRandomAction(currentState);
                     }
-                    visited[currentState] = true;
+                    // visited[currentState] = true;
                    
-                    Debug.Log(qTable[currentState][0] + " " + qTable[currentState][1] + " " + qTable[currentState][2] + " " + qTable[currentState][3]);
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
                     while (!control.moveDone)
@@ -247,7 +328,13 @@ public class QLearning : MonoBehaviour
                         if (this.GetComponent<AICharacterControl>().IsAttacked())
                         {
                             newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                            qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
+                            // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
+
+                            for (int i = 0; i < features.Count; ++i)
+                            {
+                                features[i].weight = features[i].weight + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action)) * features[i].value(action);
+                            }
+
                             rewardCurrentEpisode -= 10;
                             done = true;
                             break;
@@ -274,7 +361,12 @@ public class QLearning : MonoBehaviour
                     done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
                     // Learning
-                    qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+                    // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+
+                    for (int i = 0; i < features.Count; ++i)
+                    {
+                        features[i].weight = features[i].weight + learningRate * (reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action)) * features[i].value(action);
+                    }
 
                     currentState = newState;
                     rewardCurrentEpisode += reward;
@@ -302,7 +394,7 @@ public class QLearning : MonoBehaviour
                     {
                         action = GetRandomAction(currentState);
                     }
-                    visited[currentState] = true;
+                    // visited[currentState] = true;
 
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
@@ -326,7 +418,12 @@ public class QLearning : MonoBehaviour
                     }
 
                     // Learning
-                    qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+                    // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+
+                    for (int i = 0; i < features.Count; ++i)
+                    {
+                        features[i].weight = features[i].weight + learningRate * (reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action)) * features[i].value(action);
+                    }
 
                     currentState = newState;
                     rewardCurrentEpisode += reward;
