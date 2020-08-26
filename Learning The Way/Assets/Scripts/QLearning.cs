@@ -330,9 +330,10 @@ public class QLearning : MonoBehaviour
                             newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                             // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
 
+                            float difference = (-10) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                             for (int i = 0; i < features.Count; ++i)
                             {
-                                features[i].weight = features[i].weight + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action)) * features[i].value(action);
+                                features[i].weight = features[i].weight + learningRate * difference * features[i].value(action);
                             }
 
                             rewardCurrentEpisode -= 10;
@@ -363,9 +364,10 @@ public class QLearning : MonoBehaviour
                     // Learning
                     // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
 
+                    float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                     for (int i = 0; i < features.Count; ++i)
                     {
-                        features[i].weight = features[i].weight + learningRate * (reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action)) * features[i].value(action);
+                        features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
                     }
 
                     currentState = newState;
@@ -396,8 +398,8 @@ public class QLearning : MonoBehaviour
                     }
                     // visited[currentState] = true;
 
-
-                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                    newState = states.IndexOf(states[currentState].
+                        GetComponent<States>().NextStates()[(int)action]);
                     this.GetComponent<AICharacterControl>().currentState = newState;
                     if (this.GetComponent<AICharacterControl>().IsAttacked())
                     {
@@ -420,9 +422,10 @@ public class QLearning : MonoBehaviour
                     // Learning
                     // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
 
+                    float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                     for (int i = 0; i < features.Count; ++i)
                     {
-                        features[i].weight = features[i].weight + learningRate * (reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action)) * features[i].value(action);
+                        features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
                     }
 
                     currentState = newState;
