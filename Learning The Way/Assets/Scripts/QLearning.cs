@@ -57,7 +57,7 @@ public class QLearning : MonoBehaviour
     public List<GameObject> states;
     private int currentState;
 
-    private int newState;
+    public int newState;
     private float reward;
     private bool done;
 
@@ -90,7 +90,7 @@ public class QLearning : MonoBehaviour
             {
                 return 1;
             }
-            return 1 / Mathf.Pow(mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject)), 2);
+            return 1 / Mathf.Pow(mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject)), 1);
         }
 
         return 0;
@@ -106,15 +106,13 @@ public class QLearning : MonoBehaviour
             foreach (GameObject villain in villains)
             {
                 int dist = mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().currentState);
-                if (dist < 4)
+                if (dist == 0)
                 {
-                    if (dist == 0)
-                    {
-                        return 1;
-                    } else
-                    {
-                        return 1 / dist;
-                    }
+                    dist = mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().oldState);
+                }
+                if (dist < 2)
+                {
+                    return 1;
                 }
             }
         }
@@ -324,16 +322,19 @@ public class QLearning : MonoBehaviour
                     Action action;
                     //if (explorationRateThreshold > explorationRate)
                     //{
-                        action = GetBestAction(currentState);
+                    action = GetBestAction(currentState);
                     //}
                     //else
                     //{
                     //    action = GetRandomAction(currentState);
                     //}
                     // visited[currentState] = true;
-                   
+
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
+
+                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+
                     while (!control.moveDone)
                     {
                         if (this.GetComponent<AICharacterControl>().IsAttacked())
@@ -360,7 +361,6 @@ public class QLearning : MonoBehaviour
                         break;
                     }
 
-                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     if (visited[newState] == true)
                     {
                         reward = -5;
@@ -390,7 +390,8 @@ public class QLearning : MonoBehaviour
                     }
                     yield return null;
                 }
-            } else
+            }
+            else
             {
                 // Learning
                 for (int step = 0; step < maxStepsPerEpisode; ++step)
@@ -401,16 +402,15 @@ public class QLearning : MonoBehaviour
                     Action action;
                     //if (explorationRateThreshold > explorationRate)
                     //{
-                        action = GetBestAction(currentState);
+                    action = GetBestAction(currentState);
                     //}
                     //    else
                     //{
                     //    action = GetRandomAction(currentState);
                     //}
-                // visited[currentState] = true;
+                    // visited[currentState] = true;
 
-                newState = states.IndexOf(states[currentState].
-                        GetComponent<States>().NextStates()[(int)action]);
+                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     this.GetComponent<AICharacterControl>().currentState = newState;
                     if (this.GetComponent<AICharacterControl>().IsAttacked())
                     {
@@ -438,7 +438,7 @@ public class QLearning : MonoBehaviour
                     for (int i = 0; i < features.Count; ++i)
                     {
                         features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
-                        
+
                     }
 
                     currentState = newState;

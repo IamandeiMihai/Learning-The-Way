@@ -7,6 +7,7 @@ public class VillainAI : MonoBehaviour
     [SerializeField] private GameObject initialPos;
     Transform initialTarget;
     public int currentState;
+    public int oldState;
     public GameObject child;
     MapStatus mapStatus;
 
@@ -15,6 +16,7 @@ public class VillainAI : MonoBehaviour
     {
         initialTarget = GetComponent<AICharacterControlVillain>().target;
         currentState = child.GetComponent<QLearning>().GetIndexState(initialPos);
+        oldState = 0;
         mapStatus = GameObject.Find("Points").GetComponent<MapStatus>();
     }
 
@@ -25,18 +27,27 @@ public class VillainAI : MonoBehaviour
         {
             if (GetComponent<AICharacterControlVillain>().moveDone == true)
             {
-                currentState = child.GetComponent<QLearning>().GetIndexState(this.GetComponent<AICharacterControlVillain>().target.gameObject);
+                oldState = currentState;
+                
                 GameObject[] states = GetComponent<AICharacterControlVillain>().target.GetComponent<States>().NotNullNextStates();
 
-                if (mapStatus.GetDistance(currentState, child.GetComponent<AICharacterControl>().currentState) < 4)
+                int dist = mapStatus.GetDistance(currentState, child.GetComponent<AICharacterControl>().currentState);
+                if (dist < 4)
                 {
-                    GetComponent<AICharacterControlVillain>().target = states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<AICharacterControl>().currentState)].transform;
+                    if (dist <= 1)
+                    {
+                        GetComponent<AICharacterControlVillain>().target = states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<QLearning>().newState)].transform;
+                    }
+                    else
+                    {
+                        GetComponent<AICharacterControlVillain>().target = states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<AICharacterControl>().currentState)].transform;
+                    }
                 }
                 else
                 {
                     GetComponent<AICharacterControlVillain>().target = states[Random.Range(0, states.Length)].transform;
                 }
-
+                currentState = child.GetComponent<QLearning>().GetIndexState(this.GetComponent<AICharacterControlVillain>().target.gameObject);
 
                 GetComponent<AICharacterControlVillain>().moveDone = false;
             }
@@ -46,9 +57,18 @@ public class VillainAI : MonoBehaviour
     public void ChangeState()
     {
         GameObject[] states = child.GetComponent<QLearning>().states[currentState].GetComponent<States>().NotNullNextStates();
-        if (mapStatus.GetDistance(currentState, child.GetComponent<AICharacterControl>().currentState) < 4)
+        int dist = mapStatus.GetDistance(currentState, child.GetComponent<AICharacterControl>().currentState);
+        oldState = currentState;
+        if (dist < 4)
         {
-            currentState = child.GetComponent<QLearning>().states.IndexOf(states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<AICharacterControl>().currentState)]);
+            if (dist <= 1)
+            {
+                currentState = child.GetComponent<QLearning>().states.IndexOf(states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<QLearning>().newState)]);
+            }
+            else
+            {
+                currentState = child.GetComponent<QLearning>().states.IndexOf(states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<AICharacterControl>().currentState)]);
+            }
         }
         else
         {
