@@ -1,5 +1,1072 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &19404609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19404613}
+  - component: {fileID: 19404612}
+  - component: {fileID: 19404611}
+  - component: {fileID: 19404610}
+  m_Layer: 9
+  m_Name: Sphere (58)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19404613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19404609}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -70.693, y: 0, z: -62.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 60
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &19404612
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19404609}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &19404611
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19404609}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &19404610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19404609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503353835967}
+  eastNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 6220702502998275341}
+  westNeighbour: {fileID: 0}
+--- !u!1 &208046810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208046814}
+  - component: {fileID: 208046813}
+  - component: {fileID: 208046812}
+  - component: {fileID: 208046811}
+  m_Layer: 9
+  m_Name: Sphere (54)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &208046814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208046810}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 58.614, y: 0, z: -84.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 56
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &208046813
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208046810}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &208046812
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208046810}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &208046811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208046810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702502669387676}
+  eastNeighbour: {fileID: 6220702502761888301}
+  southNeighbour: {fileID: 6220702502811876987}
+  westNeighbour: {fileID: 6220702503856416733}
+--- !u!1 &228545565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228545569}
+  - component: {fileID: 228545568}
+  - component: {fileID: 228545567}
+  - component: {fileID: 228545566}
+  m_Layer: 9
+  m_Name: Sphere (60)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228545569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228545565}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37.2, y: 0, z: 57.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 62
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &228545568
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228545565}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &228545567
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228545565}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &228545566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228545565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702503180056285}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702502030908222}
+--- !u!1 &529037174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529037178}
+  - component: {fileID: 529037177}
+  - component: {fileID: 529037176}
+  - component: {fileID: 529037175}
+  m_Layer: 9
+  m_Name: Sphere (61)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &529037178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529037174}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64, y: 0, z: 35.914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 63
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &529037177
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529037174}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &529037176
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529037174}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &529037175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529037174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702502599430371}
+  eastNeighbour: {fileID: 6220702504040106346}
+  southNeighbour: {fileID: 6220702503121726769}
+  westNeighbour: {fileID: 6220702503863132697}
+--- !u!1 &815914865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815914869}
+  - component: {fileID: 815914868}
+  - component: {fileID: 815914867}
+  - component: {fileID: 815914866}
+  m_Layer: 9
+  m_Name: Sphere (62)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &815914869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815914865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 84.912, y: 0, z: 57.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 64
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &815914868
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815914865}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &815914867
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815914865}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &815914866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815914865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503863132697}
+  eastNeighbour: {fileID: 6220702503121726769}
+  southNeighbour: {fileID: 6220702502495093786}
+  westNeighbour: {fileID: 0}
+--- !u!1 &852429807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 852429811}
+  - component: {fileID: 852429810}
+  - component: {fileID: 852429809}
+  - component: {fileID: 852429808}
+  m_Layer: 9
+  m_Name: Sphere (55)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &852429811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852429807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 22.72, y: 0, z: -57.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 57
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &852429810
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852429807}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &852429809
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852429807}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &852429808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852429807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503749199082}
+  eastNeighbour: {fileID: 6220702502683802847}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503364250091}
+--- !u!1 &1012816455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012816459}
+  - component: {fileID: 1012816458}
+  - component: {fileID: 1012816457}
+  - component: {fileID: 1012816456}
+  m_Layer: 9
+  m_Name: Sphere (56)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1012816459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012816455}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.8, y: 0, z: -8.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 58
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1012816458
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012816455}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1012816457
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012816455}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1012816456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012816455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702502228640618}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503957441225}
+--- !u!1 &1283270608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1283270612}
+  - component: {fileID: 1283270611}
+  - component: {fileID: 1283270610}
+  - component: {fileID: 1283270609}
+  m_Layer: 9
+  m_Name: Sphere (53)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1283270612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283270608}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 81.9, y: 0, z: -105.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 55
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1283270611
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283270608}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1283270610
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283270608}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1283270609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283270608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702502669387676}
+  southNeighbour: {fileID: 6220702503856416733}
+  westNeighbour: {fileID: 2407854415007674623}
+--- !u!1 &1736476576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736476580}
+  - component: {fileID: 1736476579}
+  - component: {fileID: 1736476578}
+  - component: {fileID: 1736476577}
+  m_Layer: 9
+  m_Name: Sphere (57)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736476580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736476576}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.81, y: 0, z: 13.499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 59
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1736476579
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736476576}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1736476578
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736476576}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1736476577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736476576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503957441225}
+  eastNeighbour: {fileID: 6220702502945684237}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503411790954}
+--- !u!1 &1768079804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768079808}
+  - component: {fileID: 1768079807}
+  - component: {fileID: 1768079806}
+  - component: {fileID: 1768079805}
+  m_Layer: 9
+  m_Name: Sphere (63)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768079808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768079804}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.51, y: 0, z: 79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 65
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1768079807
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768079804}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1768079806
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768079804}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1768079805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768079804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702503980190026}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503156956362}
+--- !u!1 &1919974505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919974509}
+  - component: {fileID: 1919974508}
+  - component: {fileID: 1919974507}
+  - component: {fileID: 1919974506}
+  m_Layer: 9
+  m_Name: Sphere (59)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1919974509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919974505}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -42.1, y: 0, z: 35.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 61
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1919974508
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919974505}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1919974507
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919974505}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1919974506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919974505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702502150946841}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503615687962}
 --- !u!1 &2407854415007674623
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,9 +1160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: -0.04
-  northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 0}
+  northNeighbour: {fileID: 6220702502986730456}
+  eastNeighbour: {fileID: 1283270608}
+  southNeighbour: {fileID: 6220702502832685517}
   westNeighbour: {fileID: 0}
 --- !u!1 &6220702501973320063
 GameObject:
@@ -109,9 +1176,9 @@ GameObject:
   - component: {fileID: 6220702501973320035}
   - component: {fileID: 6220702501973320032}
   - component: {fileID: 6220702501973320033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (42)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502718825642}
@@ -206,9 +1273,9 @@ GameObject:
   - component: {fileID: 6220702502030908194}
   - component: {fileID: 6220702502030908195}
   - component: {fileID: 6220702502030908192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (37)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,9 +1353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 6220702503180056285}
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503615687962}
+  eastNeighbour: {fileID: 228545565}
   southNeighbour: {fileID: 6220702502848601132}
   westNeighbour: {fileID: 0}
 --- !u!1 &6220702502099072055
@@ -303,9 +1370,9 @@ GameObject:
   - component: {fileID: 6220702502099072059}
   - component: {fileID: 6220702502099072056}
   - component: {fileID: 6220702502099072057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (53)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +1450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502845846204}
   southNeighbour: {fileID: 0}
@@ -400,9 +1467,9 @@ GameObject:
   - component: {fileID: 6220702502112721109}
   - component: {fileID: 6220702502112721106}
   - component: {fileID: 6220702502112721107}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (85)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,7 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503790412565}
   southNeighbour: {fileID: 0}
@@ -497,9 +1564,9 @@ GameObject:
   - component: {fileID: 6220702502150946845}
   - component: {fileID: 6220702502150946842}
   - component: {fileID: 6220702502150946843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (4)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,11 +1644,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503853798030}
   eastNeighbour: {fileID: 6220702503574440959}
   southNeighbour: {fileID: 6220702503180056285}
-  westNeighbour: {fileID: 6220702503615687962}
+  westNeighbour: {fileID: 1919974505}
 --- !u!1 &6220702502159135189
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,9 +1661,9 @@ GameObject:
   - component: {fileID: 6220702502159135193}
   - component: {fileID: 6220702502159135190}
   - component: {fileID: 6220702502159135191}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (70)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -674,7 +1741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -691,9 +1758,9 @@ GameObject:
   - component: {fileID: 6220702502189163574}
   - component: {fileID: 6220702502189163575}
   - component: {fileID: 6220702502189163572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (61)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,7 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503124427326}
   southNeighbour: {fileID: 0}
@@ -785,6 +1852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6220702502208199185}
+  - component: {fileID: 1483519486}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -799,7 +1867,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702502208199214}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -810,6 +1878,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483519486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220702502208199214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdbf11903f25e1429210f21bf21d57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToState: []
 --- !u!1 &6220702502228640618
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,9 +1903,9 @@ GameObject:
   - component: {fileID: 6220702502228640622}
   - component: {fileID: 6220702502228640623}
   - component: {fileID: 6220702502228640620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (30)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,11 +1983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502902815268}
-  eastNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702503614210852}
   southNeighbour: {fileID: 6220702502542513638}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 1012816455}
 --- !u!1 &6220702502253082202
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,9 +2000,9 @@ GameObject:
   - component: {fileID: 6220702502253082206}
   - component: {fileID: 6220702502253082207}
   - component: {fileID: 6220702502253082204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (11)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -999,11 +2080,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503548391775}
   eastNeighbour: {fileID: 6220702503357583565}
   southNeighbour: {fileID: 6220702502599430371}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503289484838}
 --- !u!1 &6220702502313490266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,9 +2097,9 @@ GameObject:
   - component: {fileID: 6220702502313490270}
   - component: {fileID: 6220702502313490271}
   - component: {fileID: 6220702502313490268}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (69)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,7 +2112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702502313490266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.03, y: 0, z: -59.207}
+  m_LocalPosition: {x: -26.03, y: 0, z: -57.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702503335319612}
@@ -1096,7 +2177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1113,9 +2194,9 @@ GameObject:
   - component: {fileID: 6220702502357691699}
   - component: {fileID: 6220702502357691696}
   - component: {fileID: 6220702502357691697}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (71)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1193,7 +2274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1210,9 +2291,9 @@ GameObject:
   - component: {fileID: 6220702502376683303}
   - component: {fileID: 6220702502376683300}
   - component: {fileID: 6220702502376683301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (86)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,7 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503574440959}
@@ -1307,9 +2388,9 @@ GameObject:
   - component: {fileID: 6220702502397844747}
   - component: {fileID: 6220702502397844744}
   - component: {fileID: 6220702502397844745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (51)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1387,7 +2468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503946366300}
   eastNeighbour: {fileID: 6220702502495093786}
   southNeighbour: {fileID: 0}
@@ -1404,9 +2485,9 @@ GameObject:
   - component: {fileID: 6220702502400853413}
   - component: {fileID: 6220702502400853410}
   - component: {fileID: 6220702502400853411}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (65)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1484,7 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1501,9 +2582,9 @@ GameObject:
   - component: {fileID: 6220702502406057145}
   - component: {fileID: 6220702502406057142}
   - component: {fileID: 6220702502406057143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1581,7 +2662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502502547463}
   eastNeighbour: {fileID: 6220702503444099874}
   southNeighbour: {fileID: 6220702503728242030}
@@ -1598,9 +2679,9 @@ GameObject:
   - component: {fileID: 6220702502444791994}
   - component: {fileID: 6220702502444791995}
   - component: {fileID: 6220702502444791992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (78)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1678,7 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502772142004}
   southNeighbour: {fileID: 0}
@@ -1695,9 +2776,9 @@ GameObject:
   - component: {fileID: 6220702502446066873}
   - component: {fileID: 6220702502446066870}
   - component: {fileID: 6220702502446066871}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (64)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1775,7 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -1862,6 +2943,17 @@ Transform:
   - {fileID: 6220702502845846207}
   - {fileID: 6220702503957441224}
   - {fileID: 5247013810255951579}
+  - {fileID: 1283270612}
+  - {fileID: 208046814}
+  - {fileID: 852429811}
+  - {fileID: 1012816459}
+  - {fileID: 1736476580}
+  - {fileID: 19404613}
+  - {fileID: 1919974509}
+  - {fileID: 228545569}
+  - {fileID: 529037178}
+  - {fileID: 815914869}
+  - {fileID: 1768079808}
   m_Father: {fileID: 6220702502208199185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1877,9 +2969,9 @@ GameObject:
   - component: {fileID: 6220702502495093790}
   - component: {fileID: 6220702502495093791}
   - component: {fileID: 6220702502495093788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (50)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1957,8 +3049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 0}
+  reward: -0.04
+  northNeighbour: {fileID: 815914865}
   eastNeighbour: {fileID: 6220702503156956362}
   southNeighbour: {fileID: 6220702502845846204}
   westNeighbour: {fileID: 6220702502397844743}
@@ -1974,9 +3066,9 @@ GameObject:
   - component: {fileID: 6220702502502547467}
   - component: {fileID: 6220702502502547464}
   - component: {fileID: 6220702502502547465}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2054,7 +3146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.01
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503197400318}
   southNeighbour: {fileID: 6220702502406057141}
@@ -2071,9 +3163,9 @@ GameObject:
   - component: {fileID: 6220702502542513642}
   - component: {fileID: 6220702502542513643}
   - component: {fileID: 6220702502542513640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (29)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2151,7 +3243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502228640618}
   eastNeighbour: {fileID: 6220702503853798030}
   southNeighbour: {fileID: 0}
@@ -2168,9 +3260,9 @@ GameObject:
   - component: {fileID: 6220702502563088020}
   - component: {fileID: 6220702502563088021}
   - component: {fileID: 6220702502563088018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (82)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2248,7 +3340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 6220702502633384902}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -2265,9 +3357,9 @@ GameObject:
   - component: {fileID: 6220702502587253047}
   - component: {fileID: 6220702502587253044}
   - component: {fileID: 6220702502587253045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (66)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2345,7 +3437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -2362,9 +3454,9 @@ GameObject:
   - component: {fileID: 6220702502599430375}
   - component: {fileID: 6220702502599430372}
   - component: {fileID: 6220702502599430373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (12)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2442,10 +3534,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502253082202}
-  eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702503411790954}
+  southNeighbour: {fileID: 529037174}
   westNeighbour: {fileID: 6220702503574424254}
 --- !u!1 &6220702502609727775
 GameObject:
@@ -2459,9 +3551,9 @@ GameObject:
   - component: {fileID: 6220702502609727747}
   - component: {fileID: 6220702502609727744}
   - component: {fileID: 6220702502609727745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (28)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2539,7 +3631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502683802847}
   eastNeighbour: {fileID: 6220702502357691599}
   southNeighbour: {fileID: 6220702503957441225}
@@ -2556,9 +3648,9 @@ GameObject:
   - component: {fileID: 6220702502633384906}
   - component: {fileID: 6220702502633384907}
   - component: {fileID: 6220702502633384904}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (41)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2636,7 +3728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503980190026}
   eastNeighbour: {fileID: 6220702501973320063}
   southNeighbour: {fileID: 6220702502563088016}
@@ -2653,9 +3745,9 @@ GameObject:
   - component: {fileID: 6220702502635096942}
   - component: {fileID: 6220702502635096943}
   - component: {fileID: 6220702502635096940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (68)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2733,7 +3825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502902815268}
@@ -2750,9 +3842,9 @@ GameObject:
   - component: {fileID: 6220702502659478859}
   - component: {fileID: 6220702502659478856}
   - component: {fileID: 6220702502659478857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (72)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2830,7 +3922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502609727775}
   southNeighbour: {fileID: 0}
@@ -2847,9 +3939,9 @@ GameObject:
   - component: {fileID: 6220702502669387648}
   - component: {fileID: 6220702502669387649}
   - component: {fileID: 6220702502669387678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (20)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2927,11 +4019,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502446066869}
-  southNeighbour: {fileID: 6220702502811876987}
-  westNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 208046810}
+  westNeighbour: {fileID: 1283270608}
 --- !u!1 &6220702502683802847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2944,9 +4036,9 @@ GameObject:
   - component: {fileID: 6220702502683802819}
   - component: {fileID: 6220702502683802816}
   - component: {fileID: 6220702502683802817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (27)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2959,7 +4051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702502683802847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.1, y: 0, z: -59.2}
+  m_LocalPosition: {x: 8.1, y: 0, z: -57.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702502484680627}
@@ -3024,11 +4116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502313490266}
   southNeighbour: {fileID: 6220702502609727775}
-  westNeighbour: {fileID: 6220702503364250091}
+  westNeighbour: {fileID: 852429807}
 --- !u!1 &6220702502690833278
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,9 +4133,9 @@ GameObject:
   - component: {fileID: 6220702502690833250}
   - component: {fileID: 6220702502690833251}
   - component: {fileID: 6220702502690833248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (21)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3121,7 +4213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503186868777}
   southNeighbour: {fileID: 6220702503749199082}
@@ -3138,9 +4230,9 @@ GameObject:
   - component: {fileID: 6220702502718825646}
   - component: {fileID: 6220702502718825647}
   - component: {fileID: 6220702502718825644}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (81)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3218,7 +4310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 6220702501973320063}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -3235,9 +4327,9 @@ GameObject:
   - component: {fileID: 6220702502761888273}
   - component: {fileID: 6220702502761888302}
   - component: {fileID: 6220702502761888303}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (25)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3315,11 +4407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503749199082}
   southNeighbour: {fileID: 6220702503364250091}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 208046810}
 --- !u!1 &6220702502772142004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,9 +4424,9 @@ GameObject:
   - component: {fileID: 6220702502772142008}
   - component: {fileID: 6220702502772142009}
   - component: {fileID: 6220702502772142006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (36)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3412,7 +4504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502400853409}
   southNeighbour: {fileID: 6220702503353835967}
@@ -3429,9 +4521,9 @@ GameObject:
   - component: {fileID: 6220702502789012867}
   - component: {fileID: 6220702502789012864}
   - component: {fileID: 6220702502789012865}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (60)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3509,7 +4601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503108789871}
   southNeighbour: {fileID: 0}
@@ -3526,9 +4618,9 @@ GameObject:
   - component: {fileID: 6220702502811876991}
   - component: {fileID: 6220702502811876988}
   - component: {fileID: 6220702502811876989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (19)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3606,10 +4698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 6220702502669387676}
-  eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 0}
+  reward: -0.04
+  northNeighbour: {fileID: 208046810}
+  eastNeighbour: {fileID: 6220702503364250091}
+  southNeighbour: {fileID: 6220702503548391775}
   westNeighbour: {fileID: 6220702503124427326}
 --- !u!1 &6220702502832685517
 GameObject:
@@ -3623,9 +4715,9 @@ GameObject:
   - component: {fileID: 6220702502832685617}
   - component: {fileID: 6220702502832685518}
   - component: {fileID: 6220702502832685519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (18)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3703,8 +4795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 6220702502986730456}
+  reward: -0.04
+  northNeighbour: {fileID: 2407854415007674623}
   eastNeighbour: {fileID: 6220702503856416733}
   southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 0}
@@ -3720,9 +4812,9 @@ GameObject:
   - component: {fileID: 6220702502845846176}
   - component: {fileID: 6220702502845846177}
   - component: {fileID: 6220702502845846206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (52)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3800,7 +4892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502495093786}
   eastNeighbour: {fileID: 6220702503078466711}
   southNeighbour: {fileID: 0}
@@ -3817,9 +4909,9 @@ GameObject:
   - component: {fileID: 6220702502848601104}
   - component: {fileID: 6220702502848601105}
   - component: {fileID: 6220702502848601134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (38)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3897,11 +4989,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502030908222}
   eastNeighbour: {fileID: 6220702503414406551}
   southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702503980190026}
 --- !u!1 &6220702502878305053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,9 +5006,9 @@ GameObject:
   - component: {fileID: 6220702502878305025}
   - component: {fileID: 6220702502878305054}
   - component: {fileID: 6220702502878305055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (76)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3994,7 +5086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4011,9 +5103,9 @@ GameObject:
   - component: {fileID: 6220702502902815272}
   - component: {fileID: 6220702502902815273}
   - component: {fileID: 6220702502902815270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (31)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4091,7 +5183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502635096938}
   eastNeighbour: {fileID: 6220702502998275341}
   southNeighbour: {fileID: 6220702502228640618}
@@ -4108,9 +5200,9 @@ GameObject:
   - component: {fileID: 6220702502944247612}
   - component: {fileID: 6220702502944247613}
   - component: {fileID: 6220702502944247610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (67)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4188,7 +5280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503710677651}
@@ -4205,9 +5297,9 @@ GameObject:
   - component: {fileID: 6220702502945684337}
   - component: {fileID: 6220702502945684238}
   - component: {fileID: 6220702502945684239}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (8)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4285,11 +5377,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503615687962}
-  westNeighbour: {fileID: 6220702503411790954}
+  westNeighbour: {fileID: 1736476576}
 --- !u!1 &6220702502961842495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,9 +5394,9 @@ GameObject:
   - component: {fileID: 6220702502961842467}
   - component: {fileID: 6220702502961842464}
   - component: {fileID: 6220702502961842465}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (75)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4382,7 +5474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4399,9 +5491,9 @@ GameObject:
   - component: {fileID: 6220702502986730460}
   - component: {fileID: 6220702502986730461}
   - component: {fileID: 6220702502986730458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finish
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4414,7 +5506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702502986730456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 106.748, y: 0, z: -104.981}
+  m_LocalPosition: {x: 106.748, y: 0, z: -115.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702502208199185}
@@ -4479,10 +5571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: 1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 6220702502832685517}
+  southNeighbour: {fileID: 2407854415007674623}
   westNeighbour: {fileID: 0}
 --- !u!1 &6220702502998275341
 GameObject:
@@ -4496,9 +5588,9 @@ GameObject:
   - component: {fileID: 6220702502998275441}
   - component: {fileID: 6220702502998275342}
   - component: {fileID: 6220702502998275343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (32)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4576,8 +5668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 6220702503353835967}
+  reward: -0.04
+  northNeighbour: {fileID: 19404609}
   eastNeighbour: {fileID: 6220702503710677651}
   southNeighbour: {fileID: 6220702503614210852}
   westNeighbour: {fileID: 6220702502902815268}
@@ -4593,9 +5685,9 @@ GameObject:
   - component: {fileID: 6220702503078466715}
   - component: {fileID: 6220702503078466712}
   - component: {fileID: 6220702503078466713}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (54)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4673,7 +5765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4690,9 +5782,9 @@ GameObject:
   - component: {fileID: 6220702503108789843}
   - component: {fileID: 6220702503108789840}
   - component: {fileID: 6220702503108789841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (14)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4770,7 +5862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503124427326}
   eastNeighbour: {fileID: 6220702503548391775}
   southNeighbour: {fileID: 6220702503289484838}
@@ -4787,9 +5879,9 @@ GameObject:
   - component: {fileID: 6220702503115356501}
   - component: {fileID: 6220702503115356498}
   - component: {fileID: 6220702503115356499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (80)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4867,7 +5959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 6220702503414406551}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -4884,9 +5976,9 @@ GameObject:
   - component: {fileID: 6220702503121726773}
   - component: {fileID: 6220702503121726770}
   - component: {fileID: 6220702503121726771}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (45)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4964,11 +6056,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 0}
+  reward: -0.04
+  northNeighbour: {fileID: 529037174}
   eastNeighbour: {fileID: 6220702503949634092}
   southNeighbour: {fileID: 6220702503156956362}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 815914865}
 --- !u!1 &6220702503124427326
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,9 +6073,9 @@ GameObject:
   - component: {fileID: 6220702503124427298}
   - component: {fileID: 6220702503124427299}
   - component: {fileID: 6220702503124427296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (16)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5061,7 +6153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503856416733}
   eastNeighbour: {fileID: 6220702502811876987}
   southNeighbour: {fileID: 6220702503108789871}
@@ -5078,9 +6170,9 @@ GameObject:
   - component: {fileID: 6220702503138460090}
   - component: {fileID: 6220702503138460091}
   - component: {fileID: 6220702503138460088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (74)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5158,7 +6250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -5175,9 +6267,9 @@ GameObject:
   - component: {fileID: 6220702503156956366}
   - component: {fileID: 6220702503156956367}
   - component: {fileID: 6220702503156956364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (44)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5255,9 +6347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503121726769}
-  eastNeighbour: {fileID: 6220702503980190026}
+  eastNeighbour: {fileID: 1768079804}
   southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 6220702502495093786}
 --- !u!1 &6220702503180056285
@@ -5272,9 +6364,9 @@ GameObject:
   - component: {fileID: 6220702503180056257}
   - component: {fileID: 6220702503180056286}
   - component: {fileID: 6220702503180056287}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (3)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5352,11 +6444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502150946841}
   eastNeighbour: {fileID: 6220702502878305053}
   southNeighbour: {fileID: 6220702503356746005}
-  westNeighbour: {fileID: 6220702502030908222}
+  westNeighbour: {fileID: 228545565}
 --- !u!1 &6220702503186868777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,9 +6461,9 @@ GameObject:
   - component: {fileID: 6220702503186868781}
   - component: {fileID: 6220702503186868778}
   - component: {fileID: 6220702503186868779}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (22)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5449,7 +6541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503799034086}
@@ -5466,9 +6558,9 @@ GameObject:
   - component: {fileID: 6220702503197400290}
   - component: {fileID: 6220702503197400291}
   - component: {fileID: 6220702503197400288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (77)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5546,7 +6638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -5563,9 +6655,9 @@ GameObject:
   - component: {fileID: 6220702503289484842}
   - component: {fileID: 6220702503289484843}
   - component: {fileID: 6220702503289484840}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (15)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5643,10 +6735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503108789871}
-  eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702502253082202}
+  southNeighbour: {fileID: 6220702503574424254}
   westNeighbour: {fileID: 6220702503898078151}
 --- !u!1 &6220702503301310851
 GameObject:
@@ -5660,9 +6752,9 @@ GameObject:
   - component: {fileID: 6220702503301310855}
   - component: {fileID: 6220702503301310852}
   - component: {fileID: 6220702503301310853}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (83)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5740,7 +6832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702502406057141}
   southNeighbour: {fileID: 0}
@@ -5817,9 +6909,9 @@ GameObject:
   - component: {fileID: 6220702503353835939}
   - component: {fileID: 6220702503353835936}
   - component: {fileID: 6220702503353835937}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (35)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5897,10 +6989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502772142004}
   eastNeighbour: {fileID: 6220702502587253043}
-  southNeighbour: {fileID: 6220702502998275341}
+  southNeighbour: {fileID: 19404609}
   westNeighbour: {fileID: 6220702503799034086}
 --- !u!1 &6220702503356746005
 GameObject:
@@ -5914,9 +7006,9 @@ GameObject:
   - component: {fileID: 6220702503356746009}
   - component: {fileID: 6220702503356746006}
   - component: {fileID: 6220702503356746007}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (2)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5994,7 +7086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503180056285}
   eastNeighbour: {fileID: 6220702502502547463}
   southNeighbour: {fileID: 0}
@@ -6011,9 +7103,9 @@ GameObject:
   - component: {fileID: 6220702503357583665}
   - component: {fileID: 6220702503357583566}
   - component: {fileID: 6220702503357583567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (10)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6091,9 +7183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702503957441225}
   southNeighbour: {fileID: 6220702503411790954}
   westNeighbour: {fileID: 6220702502253082202}
 --- !u!1 &6220702503364250091
@@ -6108,9 +7200,9 @@ GameObject:
   - component: {fileID: 6220702503364250095}
   - component: {fileID: 6220702503364250092}
   - component: {fileID: 6220702503364250093}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (26)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6123,7 +7215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702503364250091}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.4, y: 0, z: -59.2}
+  m_LocalPosition: {x: 36.4, y: 0, z: -57.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702502484680627}
@@ -6188,11 +7280,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502761888301}
-  eastNeighbour: {fileID: 6220702502683802847}
+  eastNeighbour: {fileID: 852429807}
   southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702502811876987}
 --- !u!1 &6220702503411790954
 GameObject:
   m_ObjectHideFlags: 0
@@ -6205,9 +7297,9 @@ GameObject:
   - component: {fileID: 6220702503411790958}
   - component: {fileID: 6220702503411790959}
   - component: {fileID: 6220702503411790956}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (9)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6285,11 +7377,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503357583565}
-  eastNeighbour: {fileID: 6220702502945684237}
+  eastNeighbour: {fileID: 1736476576}
   southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702502599430371}
 --- !u!1 &6220702503414406551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6302,9 +7394,9 @@ GameObject:
   - component: {fileID: 6220702503414406555}
   - component: {fileID: 6220702503414406552}
   - component: {fileID: 6220702503414406553}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (39)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6382,7 +7474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503115356497}
@@ -6399,9 +7491,9 @@ GameObject:
   - component: {fileID: 6220702503444099878}
   - component: {fileID: 6220702503444099879}
   - component: {fileID: 6220702503444099876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Start
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6479,7 +7571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -6496,9 +7588,9 @@ GameObject:
   - component: {fileID: 6220702503548391747}
   - component: {fileID: 6220702503548391744}
   - component: {fileID: 6220702503548391745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (13)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6576,8 +7668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 0}
+  reward: -0.04
+  northNeighbour: {fileID: 6220702502811876987}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502253082202}
   westNeighbour: {fileID: 6220702503108789871}
@@ -6593,9 +7685,9 @@ GameObject:
   - component: {fileID: 6220702503574424226}
   - component: {fileID: 6220702503574424227}
   - component: {fileID: 6220702503574424224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (49)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6673,8 +7765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 0}
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503289484838}
   eastNeighbour: {fileID: 6220702502599430371}
   southNeighbour: {fileID: 6220702503863132697}
   westNeighbour: {fileID: 6220702503736207585}
@@ -6690,9 +7782,9 @@ GameObject:
   - component: {fileID: 6220702503574440931}
   - component: {fileID: 6220702503574440928}
   - component: {fileID: 6220702503574440929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (6)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6770,7 +7862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502376683299}
   eastNeighbour: {fileID: 6220702502961842495}
   southNeighbour: {fileID: 0}
@@ -6787,9 +7879,9 @@ GameObject:
   - component: {fileID: 6220702503614210856}
   - component: {fileID: 6220702503614210857}
   - component: {fileID: 6220702503614210854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (34)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6867,11 +7959,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502998275341}
   eastNeighbour: {fileID: 6220702503138460086}
   southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702502228640618}
 --- !u!1 &6220702503615687962
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,9 +7976,9 @@ GameObject:
   - component: {fileID: 6220702503615687966}
   - component: {fileID: 6220702503615687967}
   - component: {fileID: 6220702503615687964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (7)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6964,10 +8056,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502945684237}
-  eastNeighbour: {fileID: 6220702502150946841}
-  southNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 1919974505}
+  southNeighbour: {fileID: 6220702502030908222}
   westNeighbour: {fileID: 0}
 --- !u!1 &6220702503710677651
 GameObject:
@@ -6981,9 +8073,9 @@ GameObject:
   - component: {fileID: 6220702503710677655}
   - component: {fileID: 6220702503710677652}
   - component: {fileID: 6220702503710677653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (33)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7061,7 +8153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502944247608}
   eastNeighbour: {fileID: 6220702502159135189}
   southNeighbour: {fileID: 0}
@@ -7078,9 +8170,9 @@ GameObject:
   - component: {fileID: 6220702503728242002}
   - component: {fileID: 6220702503728242003}
   - component: {fileID: 6220702503728242000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (79)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7158,7 +8250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 6220702502406057141}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -7175,9 +8267,9 @@ GameObject:
   - component: {fileID: 6220702503736207589}
   - component: {fileID: 6220702503736207586}
   - component: {fileID: 6220702503736207587}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (58)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7255,7 +8347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503574424254}
   southNeighbour: {fileID: 0}
@@ -7272,9 +8364,9 @@ GameObject:
   - component: {fileID: 6220702503744676017}
   - component: {fileID: 6220702503744675918}
   - component: {fileID: 6220702503744675919}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (84)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7352,7 +8444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -7369,9 +8461,9 @@ GameObject:
   - component: {fileID: 6220702503749199086}
   - component: {fileID: 6220702503749199087}
   - component: {fileID: 6220702503749199084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (24)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7449,10 +8541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502690833278}
   eastNeighbour: {fileID: 6220702503799034086}
-  southNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 852429807}
   westNeighbour: {fileID: 6220702502761888301}
 --- !u!1 &6220702503790412565
 GameObject:
@@ -7466,9 +8558,9 @@ GameObject:
   - component: {fileID: 6220702503790412569}
   - component: {fileID: 6220702503790412566}
   - component: {fileID: 6220702503790412567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (43)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7546,7 +8638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503744675917}
   southNeighbour: {fileID: 6220702503980190026}
@@ -7563,9 +8655,9 @@ GameObject:
   - component: {fileID: 6220702503799034090}
   - component: {fileID: 6220702503799034091}
   - component: {fileID: 6220702503799034088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (23)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7643,7 +8735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503186868777}
   eastNeighbour: {fileID: 6220702503353835967}
   southNeighbour: {fileID: 0}
@@ -7660,9 +8752,9 @@ GameObject:
   - component: {fileID: 6220702503853798130}
   - component: {fileID: 6220702503853798131}
   - component: {fileID: 6220702503853798128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (5)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7740,7 +8832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502150946841}
@@ -7757,9 +8849,9 @@ GameObject:
   - component: {fileID: 6220702503856416705}
   - component: {fileID: 6220702503856416734}
   - component: {fileID: 6220702503856416735}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (17)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7837,9 +8929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
-  northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 0}
+  reward: -0.04
+  northNeighbour: {fileID: 1283270608}
+  eastNeighbour: {fileID: 208046810}
   southNeighbour: {fileID: 6220702503124427326}
   westNeighbour: {fileID: 6220702502832685517}
 --- !u!1 &6220702503863132697
@@ -7854,9 +8946,9 @@ GameObject:
   - component: {fileID: 6220702503863132701}
   - component: {fileID: 6220702503863132698}
   - component: {fileID: 6220702503863132699}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (48)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7934,10 +9026,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503574424254}
-  eastNeighbour: {fileID: 6220702504040106346}
-  southNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 529037174}
+  southNeighbour: {fileID: 815914865}
   westNeighbour: {fileID: 6220702504021484099}
 --- !u!1 &6220702503898078151
 GameObject:
@@ -7951,9 +9043,9 @@ GameObject:
   - component: {fileID: 6220702503898078155}
   - component: {fileID: 6220702503898078152}
   - component: {fileID: 6220702503898078153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (59)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8031,7 +9123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503289484838}
   southNeighbour: {fileID: 0}
@@ -8048,9 +9140,9 @@ GameObject:
   - component: {fileID: 6220702503946366272}
   - component: {fileID: 6220702503946366273}
   - component: {fileID: 6220702503946366302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (55)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8128,7 +9220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502397844743}
@@ -8145,9 +9237,9 @@ GameObject:
   - component: {fileID: 6220702503949634064}
   - component: {fileID: 6220702503949634065}
   - component: {fileID: 6220702503949634094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (46)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8225,7 +9317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702504040106346}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
@@ -8242,9 +9334,9 @@ GameObject:
   - component: {fileID: 6220702503957441229}
   - component: {fileID: 6220702503957441226}
   - component: {fileID: 6220702503957441227}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (73)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8257,7 +9349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702503957441225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.1, y: 0, z: -5.57}
+  m_LocalPosition: {x: 8.1, y: 0, z: -8.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702502484680627}
@@ -8322,11 +9414,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702502609727775}
-  eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 1012816455}
+  southNeighbour: {fileID: 1736476576}
+  westNeighbour: {fileID: 6220702503357583565}
 --- !u!1 &6220702503980190026
 GameObject:
   m_ObjectHideFlags: 0
@@ -8339,9 +9431,9 @@ GameObject:
   - component: {fileID: 6220702503980190030}
   - component: {fileID: 6220702503980190031}
   - component: {fileID: 6220702503980190028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (40)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8419,11 +9511,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 6220702503790412565}
-  eastNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702502848601132}
   southNeighbour: {fileID: 6220702502633384902}
-  westNeighbour: {fileID: 6220702503156956362}
+  westNeighbour: {fileID: 1768079804}
 --- !u!1 &6220702504021484099
 GameObject:
   m_ObjectHideFlags: 0
@@ -8436,9 +9528,9 @@ GameObject:
   - component: {fileID: 6220702504021484103}
   - component: {fileID: 6220702504021484100}
   - component: {fileID: 6220702504021484101}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (57)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8516,7 +9608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -1
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 6220702503863132697}
   southNeighbour: {fileID: 0}
@@ -8533,9 +9625,9 @@ GameObject:
   - component: {fileID: 6220702504040106350}
   - component: {fileID: 6220702504040106351}
   - component: {fileID: 6220702504040106348}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (47)
-  m_TagString: Untagged
+  m_TagString: state
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8613,8 +9705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 0
+  reward: -0.04
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702503949634092}
-  westNeighbour: {fileID: 6220702503863132697}
+  westNeighbour: {fileID: 529037174}

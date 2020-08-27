@@ -105,9 +105,16 @@ public class QLearning : MonoBehaviour
             int nextState = states.IndexOf(nextPosition);
             foreach (GameObject villain in villains)
             {
-                if (mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().currentState) < 2)
+                int dist = mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().currentState);
+                if (dist < 4)
                 {
-                    return 1;
+                    if (dist == 0)
+                    {
+                        return 1;
+                    } else
+                    {
+                        return 1 / dist;
+                    }
                 }
             }
         }
@@ -315,14 +322,14 @@ public class QLearning : MonoBehaviour
                     // Action
                     float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
                     Action action;
-                    if (explorationRateThreshold > explorationRate)
-                    {
+                    //if (explorationRateThreshold > explorationRate)
+                    //{
                         action = GetBestAction(currentState);
-                    }
-                    else
-                    {
-                        action = GetRandomAction(currentState);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    action = GetRandomAction(currentState);
+                    //}
                     // visited[currentState] = true;
                    
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
@@ -392,17 +399,17 @@ public class QLearning : MonoBehaviour
                     // Action
                     float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
                     Action action;
-                    if (explorationRateThreshold > explorationRate)
-                    {
+                    //if (explorationRateThreshold > explorationRate)
+                    //{
                         action = GetBestAction(currentState);
-                    }
-                    else
-                    {
-                        action = GetRandomAction(currentState);
-                    }
-                    // visited[currentState] = true;
+                    //}
+                    //    else
+                    //{
+                    //    action = GetRandomAction(currentState);
+                    //}
+                // visited[currentState] = true;
 
-                    newState = states.IndexOf(states[currentState].
+                newState = states.IndexOf(states[currentState].
                         GetComponent<States>().NextStates()[(int)action]);
                     this.GetComponent<AICharacterControl>().currentState = newState;
                     if (this.GetComponent<AICharacterControl>().IsAttacked())
