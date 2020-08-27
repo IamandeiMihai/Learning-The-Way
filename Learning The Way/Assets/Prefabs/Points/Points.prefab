@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: -0.04
-  northNeighbour: {fileID: 0}
+  northNeighbour: {fileID: 6220702503949634092}
   eastNeighbour: {fileID: 6220702503980190026}
   southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 6220702503156956362}
@@ -3247,7 +3247,7 @@ MonoBehaviour:
   northNeighbour: {fileID: 6220702502228640618}
   eastNeighbour: {fileID: 6220702503853798030}
   southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702502945684237}
 --- !u!1 &6220702502563088016
 GameObject:
   m_ObjectHideFlags: 0
@@ -5379,7 +5379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reward: -0.04
   northNeighbour: {fileID: 0}
-  eastNeighbour: {fileID: 0}
+  eastNeighbour: {fileID: 6220702502542513638}
   southNeighbour: {fileID: 6220702503615687962}
   westNeighbour: {fileID: 1736476576}
 --- !u!1 &6220702502961842495
@@ -7962,7 +7962,7 @@ MonoBehaviour:
   reward: -0.04
   northNeighbour: {fileID: 6220702502998275341}
   eastNeighbour: {fileID: 6220702503138460086}
-  southNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 6220702503853798030}
   westNeighbour: {fileID: 6220702502228640618}
 --- !u!1 &6220702503615687962
 GameObject:
@@ -8833,7 +8833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: -0.04
-  northNeighbour: {fileID: 0}
+  northNeighbour: {fileID: 6220702503614210852}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 6220702502150946841}
   westNeighbour: {fileID: 6220702502542513638}
@@ -9252,7 +9252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220702503949634092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.494, y: 0, z: 57.316}
+  m_LocalPosition: {x: 42.8, y: 0, z: 57.316}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6220702502484680627}
@@ -9320,7 +9320,7 @@ MonoBehaviour:
   reward: -0.04
   northNeighbour: {fileID: 6220702504040106346}
   eastNeighbour: {fileID: 0}
-  southNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 1768079804}
   westNeighbour: {fileID: 6220702503121726769}
 --- !u!1 &6220702503957441225
 GameObject:
