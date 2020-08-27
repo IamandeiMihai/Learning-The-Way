@@ -127,11 +127,13 @@ public class QLearning : MonoBehaviour
 
     void Start()
     {
-        features = new List<FeatureState>();
-        features.Add(new FeatureState(Bias, 0));
-        features.Add(new FeatureState(DistanceToFinish, 0));
-        features.Add(new FeatureState(OldManNearby, 0));
-        features.Add(new FeatureState(IsOnEnd, 0));
+        features = new List<FeatureState>
+        {
+            new FeatureState(Bias, 0),
+            new FeatureState(DistanceToFinish, 0),
+            new FeatureState(OldManNearby, 0),
+            new FeatureState(IsOnEnd, 0)
+        };
 
 
         //rewardsAllEpisodes = new List<float>();
