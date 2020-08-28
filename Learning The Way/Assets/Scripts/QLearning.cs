@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class QLearning : MonoBehaviour
 {
@@ -139,7 +140,7 @@ public class QLearning : MonoBehaviour
         //rewardsAllEpisodes = new List<float>();
 
         control = GetComponent<AICharacterControl>();
-
+        control.cry = false;
         states.AddRange(GameObject.FindGameObjectsWithTag("state"));
         mapStatus = GameObject.Find("Points").GetComponent<MapStatus>();
         mapStatus.Initialze();
@@ -161,13 +162,9 @@ public class QLearning : MonoBehaviour
         {
             StreamReader reader = new StreamReader(Application.persistentDataPath + "\\" + fileName + ".txt");
 
-            for (int i = 0; i < states.Count; i++)
+            for (int i = 0; i < features.Count; i++)
             {
-                string[] line = reader.ReadLine().Split();
-                qTable[i][0] = float.Parse(line[0]);
-                qTable[i][1] = float.Parse(line[1]);
-                qTable[i][2] = float.Parse(line[2]);
-                qTable[i][3] = float.Parse(line[3]);
+                features[i].weight = float.Parse(reader.ReadLine());
             }
 
             StartCoroutine(run_demo());
@@ -505,48 +502,76 @@ public class QLearning : MonoBehaviour
     {
         playerCamera.SetActive(true);
         minimapCamera.SetActive(true);
-
         // State reset
         this.transform.position = start.position;
         this.transform.rotation = startRotation;
         done = false;
         rewardCurrentEpisode = 0;
-        currentState = states.IndexOf(start.gameObject);
+        currentState = 0;
         newState = 0;
+        this.GetComponent<AICharacterControl>().attacked = false;
         this.GetComponent<AICharacterControl>().currentState = states.IndexOf(start.gameObject);
 
-        // Learning
+        foreach (GameObject villain in villains)
+        {
+            villain.GetComponent<VillainAI>().resetVillain();
+        }
+
         while (!done)
         {
 
             // Action
             float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
-            Action action = GetBestAction(currentState);
+            Action action;
+            action = GetBestAction(currentState);
 
             control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
             control.moveDone = false;
+
+            newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+
             while (!control.moveDone)
             {
                 if (this.GetComponent<AICharacterControl>().IsAttacked())
                 {
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    rewardCurrentEpisode -= 10;
+                    float difference = (-1) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
+                    for (int i = 0; i < features.Count; ++i)
+                    {
+                        features[i].weight = features[i].weight + learningRate * difference * features[i].value(action);
+                    }
+                    rewardCurrentEpisode -= 1;
+                    
                     done = true;
+                    control.cry = true;
                     break;
                 }
                 yield return null;
             }
             this.GetComponent<AICharacterControl>().currentState = newState;
 
-
             if (done == true)
             {
                 break;
             }
 
-            newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-            reward = states[newState].GetComponent<States>().reward;
-            done = states[newState].transform == end;
+            if (visited[newState] == true)
+            {
+                reward = -5;
+            }
+            else
+            {
+                reward = states[newState].GetComponent<States>().reward;
+            }
+
+            done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
+
+            // Learning
+            float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
+            for (int i = 0; i < features.Count; ++i)
+            {
+                features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
+            }
 
             currentState = newState;
             rewardCurrentEpisode += reward;
@@ -558,7 +583,6 @@ public class QLearning : MonoBehaviour
             }
             yield return null;
         }
-        yield return null;
     }
 
 
@@ -566,7 +590,7 @@ public class QLearning : MonoBehaviour
     void OnApplicationQuit()
     {
         string path = Application.persistentDataPath;
-        string name = "/QTABLE";
+        string name = "/WEIGHTS";
 
         for (int i = 0; i < 10; i++)
         {
@@ -577,9 +601,9 @@ public class QLearning : MonoBehaviour
         Debug.Log(path + name);
 
         StreamWriter writer = new StreamWriter(path + name);
-        for (int i = 0; i < qTable.Length; i++)
+        for (int i = 0; i < features.Count; i++)
         {
-            writer.WriteLine(String.Format("{0} {1} {2} {3}", qTable[i][0], qTable[i][1], qTable[i][2], qTable[i][3]));
+            writer.WriteLine(String.Format("{0}", features[i].weight));
         }
         writer.WriteLine();
         writer.Close();
