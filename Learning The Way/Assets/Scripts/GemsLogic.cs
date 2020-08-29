@@ -24,6 +24,7 @@ public class GemsLogic : MonoBehaviour
             }
         }
         gemState = legalStates[UnityEngine.Random.Range(0, legalStates.Count)];
+        gemState = legalStates[4];
         this.transform.position = gemState.transform.position;
         qLearning = GameObject.Find("Child").GetComponent<QLearning>();
         aicc = GameObject.Find("Child").GetComponent<AICharacterControl>();
@@ -32,8 +33,10 @@ public class GemsLogic : MonoBehaviour
     public void ResetEpisode()
     {
         gemState = legalStates[UnityEngine.Random.Range(0, legalStates.Count)];
+        gemState = legalStates[4];
         this.transform.position = gemState.transform.position;
         pickUpGem = false;
+        this.gameObject.SetActive(true);
     }
 
     // Start is called before the first frame update

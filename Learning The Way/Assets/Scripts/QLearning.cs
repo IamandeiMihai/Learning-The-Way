@@ -142,6 +142,7 @@ public class QLearning : MonoBehaviour
                     dist = gemDist;
                 }
             }
+            Debug.Log(dist);
             return 1 / Mathf.Pow(dist, 1);
         }
         return 0;
@@ -385,6 +386,9 @@ public class QLearning : MonoBehaviour
                                 rewardCurrentEpisode += 0.5f;
                                 reward = 0.5f;
                                 gem.GetComponent<GemsLogic>().pickUpGem = false;
+                                gem.SetActive(false);
+                                Debug.Log("ItemCollected");
+
                             }
                         }
 
@@ -481,6 +485,8 @@ public class QLearning : MonoBehaviour
                             rewardCurrentEpisode += 0.5f;
                             reward = 0.5f;
                             gem.GetComponent<GemsLogic>().pickUpGem = false;
+                            gem.SetActive(false);
+                            Debug.Log("ItemCollected");
 
                         }
                     }
@@ -593,10 +599,11 @@ public class QLearning : MonoBehaviour
                 {
                     if (gem.GetComponent<GemsLogic>().isCollectingGem())
                     {
-                        rewardCurrentEpisode += 5;
-                        Debug.Log("ItemCollected");
+                        rewardCurrentEpisode += 0.5f;
+                        reward = 0.5f;
                         gem.GetComponent<GemsLogic>().pickUpGem = false;
-
+                        gem.SetActive(false);
+                        Debug.Log("ItemCollected");
                     }
                 }
 
