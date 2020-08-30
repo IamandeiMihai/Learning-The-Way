@@ -636,11 +636,6 @@ public class QLearning : MonoBehaviour
                 if (this.GetComponent<AICharacterControl>().IsAttacked())
                 {
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    float difference = (-1) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
-                    for (int i = 0; i < features.Count; ++i)
-                    {
-                        features[i].weight = features[i].weight + learningRate * difference * features[i].value(action);
-                    }
                     rewardCurrentEpisode -= 1;
                     
                     done = true;

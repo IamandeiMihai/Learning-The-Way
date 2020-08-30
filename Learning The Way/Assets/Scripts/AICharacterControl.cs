@@ -106,7 +106,7 @@ public class AICharacterControl : MonoBehaviour
         }
 
         // verificam daca starea copilului e aceeasi cu starea inamicului -- pentru learning
-        if (!GetComponent<QLearning>().visualLearning)
+        if (!GetComponent<QLearning>().visualLearning && !GetComponent<QLearning>().demo)
         {
             foreach (GameObject villain in villains)
             {
