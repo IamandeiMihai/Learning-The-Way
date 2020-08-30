@@ -33632,6 +33632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Points
       objectReference: {fileID: 0}
+    - target: {fileID: 6220702502986730458, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: reward
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349ece727706c064aa91c35f2ea88331, type: 3}
 --- !u!1 &1597961052
@@ -46189,11 +46194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: maxStepsPerEpisode
-      value: 300
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: demo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: path
@@ -46202,7 +46207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: fileName
-      value: WEIGHTSynl4ba1s03
+      value: WEIGHTSsigcy8wtbs
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: attenuationFactor

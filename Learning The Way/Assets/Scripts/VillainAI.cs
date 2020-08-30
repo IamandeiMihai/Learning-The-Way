@@ -34,7 +34,7 @@ public class VillainAI : MonoBehaviour
                 int dist = mapStatus.GetDistance(currentState, child.GetComponent<AICharacterControl>().currentState);
                 if (dist < 4)
                 {
-                    if (dist <= 1)
+                    if (dist == 0)
                     {
                         GetComponent<AICharacterControlVillain>().target = states[mapStatus.GetNextStateToTarget(currentState, child.GetComponent<QLearning>().newState)].transform;
                     }

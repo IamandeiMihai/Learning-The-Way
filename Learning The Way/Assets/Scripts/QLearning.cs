@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Windows;
@@ -76,6 +77,7 @@ public class QLearning : MonoBehaviour
 
     MapStatus mapStatus;
     private GameObject[] gems;
+    private bool gemCollected;
 
     float Bias(Action action)
     {
@@ -92,7 +94,7 @@ public class QLearning : MonoBehaviour
             {
                 return 1;
             }
-            return 1 / Mathf.Pow(mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject)), 1);
+            return 1 / Mathf.Pow(mapStatus.GetDistance(nextState, states.IndexOf(end.gameObject)), 2);
         }
 
         return 0;
@@ -136,14 +138,39 @@ public class QLearning : MonoBehaviour
             int nextState = states.IndexOf(nextPosition);
             foreach (GameObject gem in gems)
             {
-                float gemDist = mapStatus.GetDistance(nextState, states.IndexOf(gem.GetComponent<GemsLogic>().gemState));
-                if (gemDist < dist)
+                if (gem.activeSelf == true)
                 {
-                    dist = gemDist;
+                    float gemDist = mapStatus.GetDistance(nextState, states.IndexOf(gem.GetComponent<GemsLogic>().gemState));
+                    if (gemDist < dist)
+                    {
+                        dist = gemDist;
+                    }
                 }
             }
-            Debug.Log(dist);
+            if (dist == 999)
+            {
+                return 0;
+            }
+            if (dist == 0)
+            {
+                return 1;
+            }
             return 1 / Mathf.Pow(dist, 1);
+        }
+        return 0;
+    }
+
+    float GemCollected(Action action)
+    {
+        GameObject nextPosition = states[currentState].GetComponent<States>().NextStates()[(int)action];
+        if (nextPosition != null) {
+            foreach (GameObject gem in gems)
+            {
+                int nextState = states.IndexOf(nextPosition);
+                if (mapStatus.GetDistance(nextState, states.IndexOf(gem.GetComponent<GemsLogic>().gemState)) == 0) {
+                    return 1;
+                }
+            }
         }
         return 0;
     }
@@ -153,10 +180,11 @@ public class QLearning : MonoBehaviour
         features = new List<FeatureState>
         {
             new FeatureState(Bias, 0),
+            new FeatureState(DistanceToTheClosestGem, 0),
             new FeatureState(DistanceToFinish, 0),
             new FeatureState(OldManNearby, 0),
             new FeatureState(IsOnEnd, 0),
-            new FeatureState(DistanceToTheClosestGem, 0)
+            //new FeatureState(GemCollected, 0),
         };
 
 
@@ -313,7 +341,7 @@ public class QLearning : MonoBehaviour
             {
                 gem.GetComponent<GemsLogic>().ResetEpisode();
             }
-
+            gemCollected = false;
             if (visualLearning)
             {
                 playerCamera.SetActive(true);
@@ -383,11 +411,10 @@ public class QLearning : MonoBehaviour
                         {
                             if (gem.GetComponent<GemsLogic>().isCollectingGem())
                             {
-                                rewardCurrentEpisode += 0.5f;
-                                reward = 0.5f;
+                                gemCollected = true;
+                                reward = 1;
                                 gem.GetComponent<GemsLogic>().pickUpGem = false;
                                 gem.SetActive(false);
-                                Debug.Log("ItemCollected");
 
                             }
                         }
@@ -397,13 +424,13 @@ public class QLearning : MonoBehaviour
                             newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                             // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
 
-                            float difference = (-1) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
+                            float difference = (-2) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                             for (int i = 0; i < features.Count; ++i)
                             {
                                 features[i].weight = features[i].weight + learningRate * difference * features[i].value(action);
                             }
 
-                            rewardCurrentEpisode -= 1;
+                            rewardCurrentEpisode -= 2;
                             done = true;
                             break;
                         }
@@ -462,7 +489,7 @@ public class QLearning : MonoBehaviour
                     this.GetComponent<AICharacterControl>().currentState = newState;
                     if (this.GetComponent<AICharacterControl>().IsAttacked())
                     {
-                        reward = -1;
+                        reward = -2;
                         done = true;
                     }
                     else
@@ -477,17 +504,14 @@ public class QLearning : MonoBehaviour
                         }
                         done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
                     }
-
                     foreach (GameObject gem in gems)
                     {
                         if (gem.GetComponent<GemsLogic>().isCollectingGem())
                         {
-                            rewardCurrentEpisode += 0.5f;
-                            reward = 0.5f;
+                            gemCollected = true;
+                            reward = 1;
                             gem.GetComponent<GemsLogic>().pickUpGem = false;
                             gem.SetActive(false);
-                            Debug.Log("ItemCollected");
-
                         }
                     }
 
@@ -495,12 +519,16 @@ public class QLearning : MonoBehaviour
                     // Learning
                     // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
 
+                    if (states[newState].name.Equals(end.name) && gemCollected == true)
+                    {
+                        reward += 1f;
+                    }
+
                     float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
 
                     for (int i = 0; i < features.Count; ++i)
                     {
                         features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
-
                     }
 
                     currentState = newState;
@@ -599,11 +627,9 @@ public class QLearning : MonoBehaviour
                 {
                     if (gem.GetComponent<GemsLogic>().isCollectingGem())
                     {
-                        rewardCurrentEpisode += 0.5f;
                         reward = 0.5f;
                         gem.GetComponent<GemsLogic>().pickUpGem = false;
                         gem.SetActive(false);
-                        Debug.Log("ItemCollected");
                     }
                 }
 
@@ -640,6 +666,11 @@ public class QLearning : MonoBehaviour
             }
 
             done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
+
+            if (states[newState].name.Equals(end.name) && gemCollected == true)
+            {
+                reward += 1f;
+            }
 
             // Learning
             float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
