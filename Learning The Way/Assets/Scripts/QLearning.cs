@@ -108,10 +108,14 @@ public class QLearning : MonoBehaviour
             int nextState = states.IndexOf(nextPosition);
             foreach (GameObject villain in villains)
             {
-                int dist = mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().currentState);
-                if (dist == 0)
+                int dist = 0;
+                if (nextState == villain.GetComponent<VillainAI>().currentState)
                 {
                     dist = mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().oldState);
+                }
+                else
+                {
+                    dist = mapStatus.GetDistance(nextState, villain.GetComponent<VillainAI>().currentState);
                 }
                 if (dist < 2)
                 {
