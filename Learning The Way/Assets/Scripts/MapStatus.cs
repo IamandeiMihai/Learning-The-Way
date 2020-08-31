@@ -11,9 +11,7 @@ public class MapStatus : MonoBehaviour
     {
         [SerializeField] public int[] distances;
     };
-
     [SerializeField] DistanceMatrix[] distanceToState;
-
     List<GameObject> states;
 
     // Start is called before the first frame update
@@ -26,7 +24,6 @@ public class MapStatus : MonoBehaviour
             distanceToState[i] = new DistanceMatrix();
             distanceToState[i].distances = new int[states.Count];
         }
-
 
         for (int state = 0; state < states.Count; ++state)
         {
