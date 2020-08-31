@@ -102,6 +102,7 @@ public class QLearning : MonoBehaviour
 
     float OldManNearby(Action action)
     {
+        int nr = 0;
         GameObject nextPosition = states[currentState].GetComponent<States>().NextStates()[(int)action];
         if (nextPosition != null)
         {
@@ -119,11 +120,11 @@ public class QLearning : MonoBehaviour
                 }
                 if (dist < 2)
                 {
-                    return 1;
+                    nr++;
                 }
             }
         }
-        return 0;
+        return nr;
     }
 
     float IsOnEnd(Action action)
