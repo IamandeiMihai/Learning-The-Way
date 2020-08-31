@@ -2,11 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class QLearning : MonoBehaviour
 {
@@ -40,23 +36,12 @@ public class QLearning : MonoBehaviour
     public float learningRate;
     public float attenuationFactor;
 
-
-    [SerializeField] float explorationRate;
-    float maxExplorationRate = 1;
-    float minExplorationRate = 0.01f;
-    public float explorationDecayRate;
-
-    //List<float> rewardsAllEpisodes;
-
-    List<bool> visited;
-
     float rewardCurrentEpisode;
 
     public Transform start;
     public Quaternion startRotation;
     public Transform end;
 
-    private float[][] qTable;
     public List<GameObject> states;
     private int currentState;
 
@@ -78,6 +63,10 @@ public class QLearning : MonoBehaviour
     MapStatus mapStatus;
     private GameObject[] gems;
     private bool gemCollected;
+
+    private float caughtReward = -2;
+    private float gemReward = 1;
+    private float bonusReward = 1;
 
     float Bias(Action action)
     {
@@ -165,21 +154,6 @@ public class QLearning : MonoBehaviour
         return 0;
     }
 
-    float GemCollected(Action action)
-    {
-        GameObject nextPosition = states[currentState].GetComponent<States>().NextStates()[(int)action];
-        if (nextPosition != null) {
-            foreach (GameObject gem in gems)
-            {
-                int nextState = states.IndexOf(nextPosition);
-                if (mapStatus.GetDistance(nextState, states.IndexOf(gem.GetComponent<GemsLogic>().gemState)) == 0) {
-                    return 1;
-                }
-            }
-        }
-        return 0;
-    }
-
     void Start()
     {
         features = new List<FeatureState>
@@ -189,11 +163,8 @@ public class QLearning : MonoBehaviour
             new FeatureState(DistanceToFinish, 0),
             new FeatureState(OldManNearby, 0),
             new FeatureState(IsOnEnd, 0),
-            //new FeatureState(GemCollected, 0),
         };
 
-
-        //rewardsAllEpisodes = new List<float>();
 
         control = GetComponent<AICharacterControl>();
         control.cry = false;
@@ -209,18 +180,7 @@ public class QLearning : MonoBehaviour
             gem.GetComponent<GemsLogic>().Initialize();
         }
 
-        visited = new List<bool>();
-        for (int i = 0; i < states.Count; ++i)
-        {
-            visited.Add(false);
-        }
         currentState = 0;
-
-        qTable = new float[states.Count][];
-        for (int i = 0; i < states.Count; ++i)
-        {
-            qTable[i] = new float[4];
-        }
 
         if (demo == true)
         {
@@ -236,10 +196,7 @@ public class QLearning : MonoBehaviour
         else
         {
             StartCoroutine(qLearning());
-
         }
-
-        
     }
 
     void Update()
@@ -250,20 +207,6 @@ public class QLearning : MonoBehaviour
     public int GetIndexState(GameObject state)
     {
         return states.IndexOf(state);
-    }
-
-    Action GetRandomAction(int currentState)
-    {
-        GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
-        List<int> nonNull = new List<int>();
-        for (int i = 0; i < 4; ++i)
-        {
-            if (neighbours[i] != null)
-            {
-                nonNull.Add(i);
-            }
-        }
-        return (Action)nonNull[UnityEngine.Random.Range(0, nonNull.Count)];
     }
 
     float GetQForAction(Action action)
@@ -280,7 +223,6 @@ public class QLearning : MonoBehaviour
     Action GetBestAction(int currentState)
     {
         GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
-
         Action bestAction = Action.IDLE;
         float bestValue = float.MinValue;
 
@@ -314,7 +256,6 @@ public class QLearning : MonoBehaviour
     float GetMaxValue(int state)
     {
         GameObject[] neighbours = states[currentState].GetComponent<States>().NextStates();
-
         float maxValue = float.MinValue;
 
         for (int i = 0; i < 4; ++i)
@@ -337,21 +278,19 @@ public class QLearning : MonoBehaviour
     {
         for (int episode = 1; episode <= numberOfEpisodes; ++episode)
         {
-            for (int i = 0; i < visited.Count; ++i)
-            {
-                visited[i] = false;
-            }
+            // Episode reset
 
-            foreach(GameObject gem in gems)
+            foreach (GameObject gem in gems)
             {
                 gem.GetComponent<GemsLogic>().ResetEpisode();
             }
             gemCollected = false;
+
             if (visualLearning)
             {
+                // Visual Learning
                 playerCamera.SetActive(true);
                 minimapCamera.SetActive(true);
-                // State reset
                 this.transform.position = start.position;
                 this.transform.rotation = startRotation;
                 done = false;
@@ -363,6 +302,7 @@ public class QLearning : MonoBehaviour
             }
             else
             {
+                // Background Learning
                 playerCamera.SetActive(false);
                 minimapCamera.SetActive(false);
                 done = false;
@@ -379,36 +319,20 @@ public class QLearning : MonoBehaviour
 
             if (visualLearning)
             {
-
-                // Learning
+                // Visual - Episode computation
                 for (int step = 0; step < maxStepsPerEpisode; ++step)
                 {
 
                     // Action
-                    float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
                     Action action;
-                    //if (explorationRateThreshold > explorationRate)
-                    //{
+
                     action = GetBestAction(currentState);
-                    //}
-                    //else
-                    //{
-                    //    action = GetRandomAction(currentState);
-                    //}
-                    // visited[currentState] = true;
 
                     control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
                     control.moveDone = false;
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    if (visited[newState] == true)
-                    {
-                        reward = -5;
-                    }
-                    else
-                    {
-                        reward = states[newState].GetComponent<States>().reward;
-                    }
+                    reward = states[newState].GetComponent<States>().reward;
 
                     while (!control.moveDone)
                     {
@@ -417,25 +341,26 @@ public class QLearning : MonoBehaviour
                             if (gem.GetComponent<GemsLogic>().isCollectingGem())
                             {
                                 gemCollected = true;
-                                reward = 1;
+                                reward = gemReward;
                                 gem.GetComponent<GemsLogic>().pickUpGem = false;
                                 gem.SetActive(false);
 
                             }
                         }
 
+                        // Learning
+
                         if (this.GetComponent<AICharacterControl>().IsAttacked())
                         {
                             newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                            // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * ((-10) + attenuationFactor * GetMaxValue(newState));
 
-                            float difference = (-2) + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
+                            float difference = caughtReward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                             for (int i = 0; i < features.Count; ++i)
                             {
                                 features[i].weight = features[i].weight + learningRate * difference * features[i].value(action);
                             }
 
-                            rewardCurrentEpisode -= 2;
+                            rewardCurrentEpisode -= caughtReward;
                             done = true;
                             break;
                         }
@@ -448,12 +373,13 @@ public class QLearning : MonoBehaviour
                         break;
                     }
 
-
-
                     done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
 
-                    // Learning
-                    // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
+                    if (states[newState].name.Equals(end.name) && gemCollected == true)
+                    {
+                        // Bonus gem finish
+                        reward += bonusReward;
+                    }
 
                     float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
                     for (int i = 0; i < features.Count; ++i)
@@ -461,6 +387,7 @@ public class QLearning : MonoBehaviour
                         features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
                     }
 
+                    // Prepare next step
                     currentState = newState;
                     rewardCurrentEpisode += reward;
 
@@ -473,40 +400,25 @@ public class QLearning : MonoBehaviour
             }
             else
             {
-                // Learning
+                // Background - Episode computation
                 for (int step = 0; step < maxStepsPerEpisode; ++step)
                 {
 
                     // Action
-                    float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
                     Action action;
-                    //if (explorationRateThreshold > explorationRate)
-                    //{
+
                     action = GetBestAction(currentState);
-                    //}
-                    //    else
-                    //{
-                    //    action = GetRandomAction(currentState);
-                    //}
-                    // visited[currentState] = true;
 
                     newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
                     this.GetComponent<AICharacterControl>().currentState = newState;
                     if (this.GetComponent<AICharacterControl>().IsAttacked())
                     {
-                        reward = -2;
+                        reward = caughtReward;
                         done = true;
                     }
                     else
                     {
-                        if (visited[newState] == true)
-                        {
-                            reward = -5;
-                        }
-                        else
-                        {
-                            reward = states[newState].GetComponent<States>().reward;
-                        }
+                        reward = states[newState].GetComponent<States>().reward;
                         done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
                     }
                     foreach (GameObject gem in gems)
@@ -514,7 +426,7 @@ public class QLearning : MonoBehaviour
                         if (gem.GetComponent<GemsLogic>().isCollectingGem())
                         {
                             gemCollected = true;
-                            reward = 1;
+                            reward = gemReward;
                             gem.GetComponent<GemsLogic>().pickUpGem = false;
                             gem.SetActive(false);
                         }
@@ -522,11 +434,11 @@ public class QLearning : MonoBehaviour
 
 
                     // Learning
-                    // qTable[currentState][(int)action] = qTable[currentState][(int)action] * (1 - learningRate) + learningRate * (reward + attenuationFactor * GetMaxValue(newState));
 
                     if (states[newState].name.Equals(end.name) && gemCollected == true)
                     {
-                        reward += 1f;
+                        // Bonus gem finish
+                        reward += bonusReward;
                     }
 
                     float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
@@ -535,6 +447,8 @@ public class QLearning : MonoBehaviour
                     {
                         features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
                     }
+
+                    // Prepare next step
 
                     currentState = newState;
                     rewardCurrentEpisode += reward;
@@ -548,7 +462,6 @@ public class QLearning : MonoBehaviour
                         break;
                     }
 
-                    // mut inamicii
                     foreach (GameObject villain in villains)
                     {
                         villain.GetComponent<VillainAI>().ChangeState();
@@ -556,20 +469,8 @@ public class QLearning : MonoBehaviour
                 }
             }
 
-            //explorationRate = minExplorationRate + (maxExplorationRate - minExplorationRate) * Mathf.Exp(-explorationDecayRate * episode);
-
-            //rewardsAllEpisodes.Add(rewardCurrentEpisode);
-
             if (episode % 100 == 0)
             {
-                /*float sum = 0;
-                for (int i = 0; i < rewardsAllEpisodes.Capacity; ++i)
-                {
-                    sum += rewardsAllEpisodes[i];
-                }
-                Debug.Log(episode + ": " + sum / (numberOfEpisodes / 100));
-                rewardsAllEpisodes.Clear();*/
-
                 Debug.Log(episode + ": " + (float)winRatio / 100);
                 winRatio = 0;
                 if (!visualLearning)
@@ -596,98 +497,94 @@ public class QLearning : MonoBehaviour
 
     IEnumerator run_demo()
     {
-        playerCamera.SetActive(true);
-        minimapCamera.SetActive(true);
-        // State reset
-        this.transform.position = start.position;
-        this.transform.rotation = startRotation;
-        done = false;
-        rewardCurrentEpisode = 0;
-        currentState = 0;
-        newState = 0;
-        this.GetComponent<AICharacterControl>().attacked = false;
-        this.GetComponent<AICharacterControl>().currentState = states.IndexOf(start.gameObject);
-
-        foreach (GameObject villain in villains)
+        for (int episode = 0; episode < 5; ++episode)
         {
-            villain.GetComponent<VillainAI>().resetVillain();
-        }
+            playerCamera.SetActive(true);
+            minimapCamera.SetActive(true);
+            // State reset
+            this.transform.position = start.position;
+            this.transform.rotation = startRotation;
+            done = false;
+            demo_done = false;
+            rewardCurrentEpisode = 0;
+            currentState = 0;
+            newState = 0;
+            this.GetComponent<AICharacterControl>().attacked = false;
+            this.GetComponent<AICharacterControl>().currentState = states.IndexOf(start.gameObject);
 
-        while (!done)
-        {
-
-            // Action
-            float explorationRateThreshold = UnityEngine.Random.Range(0f, 1f);
-            Action action;
-            action = GetBestAction(currentState);
-
-            control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
-            control.moveDone = false;
-
-            newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-
-            while (!control.moveDone)
+            foreach (GameObject villain in villains)
             {
-                foreach (GameObject gem in gems)
+                villain.GetComponent<VillainAI>().resetVillain();
+            }
+
+            foreach (GameObject gem in gems)
+            {
+                gem.GetComponent<GemsLogic>().ResetEpisode();
+            }
+
+            while (!done)
+            {
+
+                // Action
+                Action action;
+                action = GetBestAction(currentState);
+
+                control.target = states[currentState].GetComponent<States>().NextStates()[(int)action].transform;
+                control.moveDone = false;
+
+                newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+
+                while (!control.moveDone)
                 {
-                    if (gem.GetComponent<GemsLogic>().isCollectingGem())
+                    foreach (GameObject gem in gems)
                     {
-                        reward = 0.5f;
-                        gem.GetComponent<GemsLogic>().pickUpGem = false;
-                        gem.SetActive(false);
+                        if (gem.GetComponent<GemsLogic>().isCollectingGem())
+                        {
+                            reward = gemReward;
+                            gem.GetComponent<GemsLogic>().pickUpGem = false;
+                            gem.SetActive(false);
+                        }
                     }
+
+                    if (this.GetComponent<AICharacterControl>().IsAttacked())
+                    {
+                        newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
+                        rewardCurrentEpisode -= caughtReward;
+
+                        done = true;
+                        break;
+                    }
+                    yield return null;
+                }
+                this.GetComponent<AICharacterControl>().currentState = newState;
+
+                if (done == true)
+                {
+                    break;
                 }
 
-                if (this.GetComponent<AICharacterControl>().IsAttacked())
+                reward = states[newState].GetComponent<States>().reward;
+
+                done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
+
+                if (states[newState].name.Equals(end.name) && gemCollected == true)
                 {
-                    newState = states.IndexOf(states[currentState].GetComponent<States>().NextStates()[(int)action]);
-                    rewardCurrentEpisode -= 1;
-                    
-                    done = true;
-                    //control.cry = true;
+                    reward += bonusReward;
+                }
+
+                // Prepare next step
+
+                currentState = newState;
+                rewardCurrentEpisode += reward;
+
+                if (done == true)
+                {
+                    demo_done = true;
                     break;
                 }
                 yield return null;
             }
-            this.GetComponent<AICharacterControl>().currentState = newState;
-
-            if (done == true)
-            {
-                break;
-            }
-
-            if (visited[newState] == true)
-            {
-                reward = -5;
-            }
-            else
-            {
-                reward = states[newState].GetComponent<States>().reward;
-            }
-
-            done = states[newState].transform == end || states[newState].transform.parent.name.Equals("Ends");
-
-            if (states[newState].name.Equals(end.name) && gemCollected == true)
-            {
-                reward += 1f;
-            }
-
-            // Learning
-            float correction = reward + attenuationFactor * GetMaxValue(newState) - GetQForAction(action);
-            for (int i = 0; i < features.Count; ++i)
-            {
-                features[i].weight = features[i].weight + learningRate * correction * features[i].value(action);
-            }
-
-            currentState = newState;
-            rewardCurrentEpisode += reward;
-
-            if (done == true)
-            {
-                demo_done = true;
-                break;
-            }
-            yield return null;
+            yield return new WaitForSeconds(4);
         }
     }
 
