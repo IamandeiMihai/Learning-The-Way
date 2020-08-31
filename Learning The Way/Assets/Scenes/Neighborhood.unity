@@ -2064,6 +2064,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1186959314}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &80043889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1736476576, guid: 349ece727706c064aa91c35f2ea88331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1572606485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &81827694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3015640459352334565, guid: 41e4f18c5e042984ea1e15df13053cca,
@@ -3686,6 +3692,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e4f18c5e042984ea1e15df13053cca, type: 3}
+--- !u!1 &160985065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6220702503790412565, guid: 349ece727706c064aa91c35f2ea88331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1572606485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &161752303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4181412030706038981, guid: 3787163e84369354999e5f83cde92896,
@@ -34155,6 +34167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1736476577, guid: 349ece727706c064aa91c35f2ea88331, type: 3}
+      propertyPath: southNeighbour
+      value: 
+      objectReference: {fileID: 160985065}
     - target: {fileID: 6220702502208199185, guid: 349ece727706c064aa91c35f2ea88331,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34220,6 +34236,11 @@ PrefabInstance:
       propertyPath: reward
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 6220702503790412567, guid: 349ece727706c064aa91c35f2ea88331,
+        type: 3}
+      propertyPath: northNeighbour
+      value: 
+      objectReference: {fileID: 80043889}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349ece727706c064aa91c35f2ea88331, type: 3}
 --- !u!1 &1597961052
@@ -42209,8 +42230,8 @@ Transform:
   - {fileID: 910821461}
   - {fileID: 2078995111}
   - {fileID: 966565059}
-  - {fileID: 248747081}
   - {fileID: 300858620}
+  - {fileID: 248747081}
   - {fileID: 30143175}
   - {fileID: 718408538}
   - {fileID: 524725059}
@@ -47045,7 +47066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: fileName
-      value: WEIGHTSsigcy8wtbs
+      value: WEIGHTS061zls1i40
       objectReference: {fileID: 0}
     - target: {fileID: 875795520, guid: 6404b9ef317382e4aabaedc17f60a0ec, type: 3}
       propertyPath: attenuationFactor
