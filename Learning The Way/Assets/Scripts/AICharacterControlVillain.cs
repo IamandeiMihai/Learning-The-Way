@@ -4,25 +4,14 @@ using UnityEngine;
 
 public class AICharacterControlVillain : MonoBehaviour
 {
-    public void Initialize(GameObject character)
-    {
-        m_animator = character.GetComponent<Animator>();
-    }
-
+    [SerializeField] public Animator m_animator;
     private float m_currentV = 0;
-    private float m_jumpTimeStamp = 0;
-    private float m_minJumpInterval = 3f;
     private readonly float m_interpolation = 10;
-    [SerializeField] private Animator m_animator;
-
-
     public Transform target;
     public bool moveDone;
     public bool rotationDone;
-
     public float moveSpeed;
     public float turnSpeed;
-
 
     private void Awake()
     {
@@ -32,13 +21,6 @@ public class AICharacterControlVillain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
-        //if (this.GetComponent<QLearning>().demo_done == true && jumpCooldownOver)
-        //{
-        //    m_jumpTimeStamp = Time.time;
-        //    m_animator.SetTrigger("Wave");
-        //}
         MoveCharacter(target);
     }
 

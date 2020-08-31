@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VillainAI : MonoBehaviour
 {
-    [SerializeField] private GameObject initialPos;
+    [SerializeField] public GameObject initialPos;
     Transform initialTarget;
     public int currentState;
     public int oldState;

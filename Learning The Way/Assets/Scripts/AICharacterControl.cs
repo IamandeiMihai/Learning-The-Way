@@ -5,32 +5,19 @@ using UnityEngine;
 public class AICharacterControl : MonoBehaviour
 {
     [SerializeField] private GameObject[] villains;
+    [SerializeField] public Animator m_animator;
     public bool attacked = false;
     public int currentState = 0;
-
-    public void Initialize(GameObject character)
-    {
-        m_animator = character.GetComponent<Animator>();
-    }
-
     private float m_currentV = 0;
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 3f;
-    private float m_cryTimeStamp = 0;
-    private float m_minCryInterval = 3f;
     private readonly float m_interpolation = 10;
-    [SerializeField] private Animator m_animator;
-
-
     public Transform target;
     public bool moveDone;
     public bool rotationDone;
-
     public float moveSpeed;
     public float turnSpeed;
-
     public bool cry = false;
-
 
     private void Awake()
     {
@@ -42,20 +29,12 @@ public class AICharacterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
-        bool cryCooldownOver = (Time.time - m_cryTimeStamp) >= m_minCryInterval;
 
         if (this.GetComponent<QLearning>().demo_done == true && jumpCooldownOver)
         {
             m_jumpTimeStamp = Time.time;
             m_animator.SetTrigger("Wave");
-        }
-
-        if (cry == true && cryCooldownOver)
-        {
-            m_cryTimeStamp = Time.time;
-            m_animator.SetTrigger("Cry");
         }
         MoveCharacter(target);
     }
@@ -69,7 +48,6 @@ public class AICharacterControl : MonoBehaviour
                 Vector3 direction = target.position - this.transform.position;
                 Quaternion toRotation = Quaternion.LookRotation(direction);
                 this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, toRotation, turnSpeed * Time.deltaTime);
-
 
                 if (Quaternion.Angle(toRotation, this.transform.rotation) < 0.5f)
                 {
@@ -104,7 +82,6 @@ public class AICharacterControl : MonoBehaviour
         {
             return true;
         }
-
         // verificam daca starea copilului e aceeasi cu starea inamicului -- pentru learning
         if (!GetComponent<QLearning>().visualLearning && !GetComponent<QLearning>().demo)
         {

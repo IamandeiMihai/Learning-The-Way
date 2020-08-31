@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GemsLogic : MonoBehaviour
@@ -11,8 +9,7 @@ public class GemsLogic : MonoBehaviour
     public bool pickUpGem = false;
     private QLearning qLearning;
     private AICharacterControl aicc;
-
-
+    
     public void Initialize()
     {
         states = GameObject.Find("Child").GetComponent<QLearning>().states;
@@ -35,12 +32,6 @@ public class GemsLogic : MonoBehaviour
         this.transform.position = gemState.transform.position;
         pickUpGem = false;
         this.gameObject.SetActive(true);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
