@@ -679,6 +679,103 @@ MonoBehaviour:
   eastNeighbour: {fileID: 6220702502228640618}
   southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 6220702503957441225}
+--- !u!1 &1140736029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1140736033}
+  - component: {fileID: 1140736032}
+  - component: {fileID: 1140736031}
+  - component: {fileID: 1140736030}
+  m_Layer: 9
+  m_Name: Sphere (66)
+  m_TagString: state
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1140736033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140736029}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 61.305, y: 0, z: 105.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6220702502484680627}
+  m_RootOrder: 69
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1140736032
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140736029}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1140736031
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140736029}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1140736030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140736029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18164fc3e05c89c4ea089cd3030f9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: -0.04
+  northNeighbour: {fileID: 6220702503156956362}
+  eastNeighbour: {fileID: 6220702503078466711}
+  southNeighbour: {fileID: 0}
+  westNeighbour: {fileID: 6220702502845846204}
 --- !u!1 &1283270608
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +968,7 @@ MonoBehaviour:
   reward: -0.04
   northNeighbour: {fileID: 6220702503957441225}
   eastNeighbour: {fileID: 6220702502945684237}
-  southNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 6220702503790412565}
   westNeighbour: {fileID: 6220702503411790954}
 --- !u!1 &1768079804
 GameObject:
@@ -2860,6 +2957,7 @@ Transform:
   - {fileID: 6891941659091110661}
   - {fileID: 6220702502099072054}
   - {fileID: 6864997781486785544}
+  - {fileID: 1140736033}
   m_Father: {fileID: 6220702502208199185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4800,7 +4898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reward: -0.04
   northNeighbour: {fileID: 6220702502495093786}
-  eastNeighbour: {fileID: 6220702503078466711}
+  eastNeighbour: {fileID: 1140736029}
   southNeighbour: {fileID: 0}
   westNeighbour: {fileID: 6220702502099072055}
 --- !u!1 &6220702502848601132
@@ -5675,7 +5773,7 @@ MonoBehaviour:
   northNeighbour: {fileID: 0}
   eastNeighbour: {fileID: 0}
   southNeighbour: {fileID: 0}
-  westNeighbour: {fileID: 6220702502845846204}
+  westNeighbour: {fileID: 1140736029}
 --- !u!1 &6220702503108789871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,7 +6354,7 @@ MonoBehaviour:
   reward: -0.04
   northNeighbour: {fileID: 6220702503121726769}
   eastNeighbour: {fileID: 1768079804}
-  southNeighbour: {fileID: 0}
+  southNeighbour: {fileID: 1140736029}
   westNeighbour: {fileID: 6220702502495093786}
 --- !u!1 &6220702503180056285
 GameObject:
@@ -8543,7 +8641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: -0.04
-  northNeighbour: {fileID: 0}
+  northNeighbour: {fileID: 1736476576}
   eastNeighbour: {fileID: 6220702503744675917}
   southNeighbour: {fileID: 6220702503980190026}
   westNeighbour: {fileID: 6220702502112721105}
